@@ -1,0 +1,29 @@
+@import './root.scss';
+
+.header {
+    position: relative;
+    background: rgb(33,83,212);
+    background: linear-gradient(180deg, rgba(33,83,212,1) 0%, rgba(243,243,243,1) 100%);
+    height: 100vh;
+}
+
+.logo {
+    position: absolute;
+    top: 40vh;
+    left: 10vw;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .image {
+        width: 340px;
+        height: auto;
+    }
+
+    h1 {
+        margin-top: -16px;
+        font-size: 58px;
+        font-weight: 500;
+    }
+}
