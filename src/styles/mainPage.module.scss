@@ -1,16 +1,22 @@
 @import './root.scss';
 
 .header {
-    position: relative;
     background: rgb(33,83,212);
     background: linear-gradient(180deg, rgba(33,83,212,1) 0%, rgba(243,243,243,1) 100%);
     height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    div {
+        position: relative;
+    }
 }
 
 .logo {
     position: absolute;
-    top: 40vh;
-    left: 10vw;
+    top: -10vh;
+    right: 430px;
     color: #fff;
     display: flex;
     flex-direction: column;
