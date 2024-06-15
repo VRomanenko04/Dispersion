@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Be_Vietnam_Pro } from "next/font/google";
 import "@/styles/globals.scss";
 
-const beVietnamPro = Be_Vietnam_Pro({subsets: ["latin"], weight: ["400", "600", "700"] });
+const beVietnamPro = Be_Vietnam_Pro({subsets: ["latin"], weight: ["400", "500", "600", "700"] });
 
 export const metadata: Metadata = {
   title: "Dispersion digital agency",
