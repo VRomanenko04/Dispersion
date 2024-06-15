@@ -1,0 +1,49 @@
+@import '../../styles/root.scss';
+
+.container {
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.abilities__up,
+.abilities__down {
+    width: 80vw;
+    max-width: 1600px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    span {
+        flex-grow: 1;
+        text-align: center;
+        margin: 0 6px;
+    }
+}
+
+.abilities__up {
+    margin-right: 5px;
+    margin-bottom: -5px;
+}
+
+.regular {
+    font-style: $bodyLarge;
+    font-weight: $regular;
+}
+
+.semibold {
+    font-size: $title;
+    font-weight: $semiBold;
+}
+
+.hight {
+    font-size: $title;
+    font-weight: $regular;
+}
+
+.big {
+    font-size: $headline;
+    font-weight: $bold;
+}
