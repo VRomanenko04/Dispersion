@@ -9,14 +9,14 @@
     justify-content: center;
 
     div {
-        position: relative;
+        width: 80vw;
+        max-width: 1600px;
+        display: flex;
+        align-items: flex-start;
     }
 }
 
 .logo {
-    position: absolute;
-    top: -10vh;
-    right: 430px;
     color: #fff;
     display: flex;
     flex-direction: column;
