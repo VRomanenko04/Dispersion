@@ -7,6 +7,7 @@ const WorkExamples = () => {
     const ref = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
         target: ref,
+        offset: ["0.3 1", "1.3 1"]
     });
 
     const moveDown = useTransform(scrollYProgress, [0, 1], [150, 0]);
