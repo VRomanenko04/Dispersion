@@ -1,0 +1,83 @@
+@import '../../styles/root.scss';
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 1000px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80vw;
+    max-width: 2000px;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.menu__item {
+    font-size: $headline;
+    cursor: pointer;
+    transition: color 100ms ease-in-out;
+    color: $dark;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    h3 {
+        font-weight: $semiBold;
+        transform-origin: left center;
+        transition: transform 100ms ease-in-out;
+    }
+
+    .line {
+        width: 4px;
+        height: 19px;
+        background-color: $dark;
+        transition: all 100ms ease-in-out;
+    }
+}
+
+.active__first,
+.active__second,
+.active__third {
+    h3 {
+        transform: scale(1.4);
+    }
+
+    .line {
+        width: 8px;
+        height: 39px;
+    }
+}
+
+.active__first {
+    color: $blue;
+
+    .line {
+        background-color: $blue;
+    }
+}
+
+.active__second {
+    color: $magenta;
+
+    .line {
+        background-color: $magenta;
+    }
+}
+
+.active__third {
+    color: $purple;
+
+    .line {
+        background-color: $purple;
+    }
+}
