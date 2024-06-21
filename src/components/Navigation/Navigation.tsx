@@ -57,7 +57,7 @@ const handleNavClick = (imageType: string) => {
                     </ul>
                 </nav>
                 <div className={styles.image__block}>
-                    <Image className={`${styles.image} ${isHidden ? styles.hidden__image : ''}`} src={chosenImage} alt={navImage}/>
+                    <Image loading='eager' className={`${styles.image} ${isHidden ? styles.hidden__image : ''}`} src={chosenImage} alt={navImage}/>
                     <div className={`${chosenBlur} ${isHidden ? styles.hidden : ''}`}></div>
                 </div>
             </div>
