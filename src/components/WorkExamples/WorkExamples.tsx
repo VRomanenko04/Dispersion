@@ -7,15 +7,15 @@ const WorkExamples = () => {
     const ref = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
         target: ref,
-        offset: ["0.3 1", "1.3 1"]
+        offset: ["0.3 1", "1.6 1"]
     });
 
-    const moveDown = useTransform(scrollYProgress, [0, 1], [150, 0]);
-    const moveUp = useTransform(scrollYProgress, [0, 1], [-150, 0]);
+    const moveDown = useTransform(scrollYProgress, [0, 1], [150, -50]);
+    const moveUp = useTransform(scrollYProgress, [0, 1], [-150, 50]);
 
     return (
-        <section className={styles.wrapper}>
-            <div className={styles.container} ref={ref}>
+        <section className={styles.wrapper} ref={ref}>
+            <div className={styles.container}>
                 <motion.div 
                     className={styles.flex__start}
                     style={{ y: moveDown }}
