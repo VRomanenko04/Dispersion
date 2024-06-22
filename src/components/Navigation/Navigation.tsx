@@ -7,10 +7,13 @@ import Web_3d from '@/assets/web_3d.png';
 import Design_3d from '@/assets/picture_3d.png';
 import Portfolio_3d from '@/assets/bag_3d.png';
 
+type NavProps = {
+    currentPage: string
+    setCurrentPage: React.Dispatch<React.SetStateAction<string>>
+}
 
-const Navigation = () => {
+const Navigation = ({ currentPage, setCurrentPage }: NavProps) => {
 const [navImage, setNavImage] = useState("Website creation");
-const [changePage, setChangePage] = useState("Website creation");
 const [isHidden, setIsHidden] = useState(false);
 const [items, setItems] = useState(["Website creation", "Design services", "Portfolio"]);
 
@@ -24,7 +27,7 @@ const handleNavClick = (selectedItem: string) => {
             updatedItems.unshift(selectedItem);
             return updatedItems;
         });
-        setChangePage(selectedItem);
+        setCurrentPage(selectedItem);
         setIsHidden(true);
         setTimeout(() => {
             setIsHidden(false);
@@ -36,9 +39,9 @@ const handleNavClick = (selectedItem: string) => {
 };
 
 const getActiveClass = (item: string) => {
-    if (changePage === "Website creation" && item === "Website creation") return styles.active__1;
-    if (changePage === "Design services" && item === "Design services") return styles.active__2;
-    if (changePage === "Portfolio" && item === "Portfolio") return styles.active__3;
+    if (currentPage === "Website creation" && item === "Website creation") return styles.active__1;
+    if (currentPage === "Design services" && item === "Design services") return styles.active__2;
+    if (currentPage === "Portfolio" && item === "Portfolio") return styles.active__3;
     return '';
 };
 
@@ -48,7 +51,7 @@ const getActiveClass = (item: string) => {
                 <nav>
                     <ul className={styles.menu}>
                         {items.map((item) => {
-                            const isActive = changePage === item;
+                            const isActive = currentPage === item;
                             const listItemStyles = `${styles.menu__item} ${isActive ? getActiveClass(item) : ''}`;
                             return (
                                 <motion.li
