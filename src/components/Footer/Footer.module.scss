@@ -1,0 +1,58 @@
+@import '../../styles/root.scss';
+
+.footer {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.blue {
+    background-color: $blue;
+}
+
+.magenta {
+    background-color: $magenta;
+}
+
+.purple {
+    background-color: $purple;
+}
+
+.footer__container {
+    width: 90vw;
+    max-width: 1600px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    color: $white;
+}
+
+.adress {
+    display: flex;
+    flex-direction: column;
+    font-style: normal;
+    gap: 10px;
+
+    h6 {
+        font-size: $bodyLarge;
+        font-weight: $semiBold;
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-size: $bodyLarge;
+        font-weight: $regular;
+    }
+
+    .link {
+        cursor: pointer;
+    }
+}
+
+.logo {
+    width: 312px;
+    height: 136px;
+}
