@@ -1,6 +1,8 @@
 'use client'
 import React, { useState } from 'react';
 import Navigation from '../Navigation/Navigation';
+import WebdevSubPage from '../WebdevSubPage/WebdevSubPage';
+import DesignSubPage from '../DesignSubPage/DesignSubPage';
 
 
 const SubPages = () => {
@@ -12,6 +14,8 @@ const SubPages = () => {
                 currentPage={currentPage}
                 setCurrentPage={setCurrentPage}
             />
+            {currentPage === "Website creation" && <WebdevSubPage />}
+            {currentPage === "Design services" && <DesignSubPage />}
         </>
     )
 }
