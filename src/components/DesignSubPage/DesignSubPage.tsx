@@ -1,11 +1,20 @@
 import React from 'react';
 import styles from './DesignSubPage.module.scss';
 import UiSubPage from '../UiSubPage/UiSubPage';
+import { motion } from 'framer-motion';
 
+type DesignProps = {
+    isActive: boolean
+}
 
-const DesignSubPage = () => {
+const DesignSubPage = ({ isActive }: DesignProps) => {
     return (
-        <section className={styles.wrapper}>
+        <motion.section 
+            className={styles.wrapper}
+            initial={{ opacity: 0 }}
+            animate={isActive && { opacity: 1 }}
+            transition={{ duration: 1.5, delay: 0.5 }}
+        >
             <UiSubPage 
                 isStandart={true}
                 title='Design guidelines'
@@ -27,7 +36,7 @@ const DesignSubPage = () => {
                 link='/'
                 color='magenta'
             />
-        </section>
+        </motion.section>
     )
 }
 
