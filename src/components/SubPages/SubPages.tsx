@@ -15,8 +15,8 @@ const SubPages = () => {
                 currentPage={currentPage}
                 setCurrentPage={setCurrentPage}
             />
-            {currentPage === "Website creation" && <WebdevSubPage />}
-            {currentPage === "Design services" && <DesignSubPage />}
+            {currentPage === "Website creation" && <WebdevSubPage isActive={currentPage === "Website creation"}/>}
+            {currentPage === "Design services" && <DesignSubPage isActive={currentPage === "Design services"}/>}
             <Footer color={currentPage === "Website creation" ? 'blue' : currentPage === "Design services" ? 'magenta' : currentPage === "Portfolio" ? 'purple' : ''}/>
         </>
     )
