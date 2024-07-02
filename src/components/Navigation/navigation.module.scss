@@ -79,11 +79,11 @@
     z-index: 2 !important;
     width: 750px;
     height: 750px;
-    transition: opacity 1s ease-in-out, transform 1.5s ease-in-out;
+    transition: opacity 0.6s ease-in-out, transform 1.5s ease-in-out;
 }
 
 .hidden__image {
-    transform: translateX(15vw);
+    transform: translateX(7vw);
     opacity: 0;
 }
 

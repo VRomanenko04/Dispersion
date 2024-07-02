@@ -13,7 +13,7 @@ const DesignSubPage = ({ isActive }: DesignProps) => {
             className={styles.wrapper}
             initial={{ opacity: 0 }}
             animate={isActive && { opacity: 1 }}
-            transition={{ duration: 1.5, delay: 0.5 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
         >
             <UiSubPage 
                 isStandart={true}
