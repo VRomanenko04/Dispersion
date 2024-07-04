@@ -1,0 +1,92 @@
+@import '../../styles/root.scss';
+
+.wrapper {
+    height: 900px;
+    width: 100%;
+    position: relative;
+}
+
+.slider__container {
+    height: 600px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.slide {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    height: 596px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+
+.slide__subimages {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.image__main {
+    width: 1200px;
+    height: 680px;
+}
+
+.image__sub {
+    height: 217px;
+    width: 400px;
+}
+
+.btn__left,
+.btn__right {
+    position: absolute;
+    background-color: $purple;
+    width: 58px;
+    height: 130px;
+    border: none;
+    color: $white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: $regular;
+    font-size: $bodyLarge;
+}
+
+.btn__left {
+    left: -5vw;
+    top: 43%;
+}
+
+.btn__right {
+    right: -5vw;
+    top: 43%;
+}
+
+.description__container {
+    position: relative;
+    margin-top: 300px;
+    font-size: $bodyMedium;
+
+    p {
+        position: absolute;
+    }
+}
+
+.slide__bar {
+    position: absolute;
+    top: 91%;
+    width: 1600px;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.bar {
+    width: auto;
+    border: 3px solid #C1C1C1;
+    border-radius: 10px;
+}
