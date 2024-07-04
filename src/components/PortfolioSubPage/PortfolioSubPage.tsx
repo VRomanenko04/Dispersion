@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './PortfolioSubPage.module.scss';
 import { motion } from 'framer-motion';
+import Slider from '../Slider/Slider';
 
 type PortfolioProps = {
     isActive: boolean
@@ -20,12 +21,8 @@ const PortfolioSubPage = ({ isActive }: PortfolioProps) => {
                         <h6 className={styles.question__first}>Who we are?</h6>
                         <p className={styles.answer}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati, dignissimos fuga, hic facere vero ad temporibus ratione quisquam voluptatibus quae eligendi praesentium repellat nesciunt! Quisquam dolorem totam dolore quas iste!</p>
                     </article>
-                    <article>
-                        <h6 className={styles.question__second}>Why choosing us?</h6>
-                        <p className={styles.answer}>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex, molestiae? Beatae, nam est quisquam aspernatur sunt pariatur. Et nisi aperiam inventore repellat, cumque quam cupiditate accusamus vitae veniam ut alias in tenetur eaque non minima, ducimus magni voluptatibus delectus natus sint repudiandae?</p>
-                    </article>
                 </section>
-                {/* Slider component */}
+                <Slider />
             </div>
         </motion.section>
     )
