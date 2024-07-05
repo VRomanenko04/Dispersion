@@ -28,6 +28,13 @@ const slides = [
         image4: ImageEtalon4,
         descrition: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione reiciendis eos, aut quis ipsa dicta in nobis aspernatur doloribus architecto voluptas exercitationem facere amet! Neque vel aspernatur repudiandae sint fuga cupiditate, eius officia adipisci recusandae corporis saepe eaque dicta sit, pariatur voluptatem atque debitis. Totam tempore quo perspiciatis commodi quae.'
     },
+    {
+        image1: ImageSpaceDev1,
+        image2: ImageSpaceDev2,
+        image3: ImageSpaceDev3,
+        image4: ImageSpaceDev4,
+        descrition: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis commodi sed nobis tempora error, sunt quibusdam libero, aliquid corporis, dolorum laborum nisi ipsa atque veritatis asperiores assumenda pariatur porro consequuntur inventore omnis praesentium voluptate sit consequatur. Quod placeat asperiores inventore?'
+    }
 ]
 
 const Slider = () => {
@@ -51,7 +58,7 @@ const Slider = () => {
                         key={index}
                         initial={{ opacity: 0}}
                         animate={{ opacity: index === activeSlideIndex ? 1 : 0}}
-                        transition={{ duration: 0.3}}
+                        transition={{ duration: 0}}
                     >
                         <Image src={slide.image1} alt={slide.descrition} className={styles.image__main}/>
                         <div className={styles.slide__subimages}>
@@ -69,10 +76,8 @@ const Slider = () => {
                         key={index}
                         className={styles.bar}
                         initial={{ width: '20%' }}
-                        animate={{ width: index === activeSlideIndex ? '80%' : '20%'}}
-                        transition={{ width: { duration: 0.3 } }}
-                        style={{ border: index === activeSlideIndex ? '3px solid #5116FB' : '3px solid #C1C1C1' }}
-
+                        animate={{ width: index === activeSlideIndex ? '80%' : '20%', border: index === activeSlideIndex ? '3px solid #5116FB' : '3px solid #C1C1C1'}}
+                        transition={{ width: { duration: 0.3 }, border: { delay: 0.15} }}
                     ></motion.div>
                 ))}
             </div>
@@ -82,7 +87,7 @@ const Slider = () => {
                         key={index}
                         initial={{ opacity: 0}}
                         animate={{ opacity: index === activeSlideIndex ? 1 : 0}}
-                        transition={{ duration: 0.3}}
+                        transition={{ duration: 0}}
                     >
                         {slide.descrition}
                     </motion.p>
