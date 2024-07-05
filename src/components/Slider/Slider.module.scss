@@ -33,13 +33,13 @@
 }
 
 .image__main {
-    width: 1200px;
-    height: 680px;
+    width: 1060px;
+    height: 600px;
 }
 
 .image__sub {
-    height: 217px;
-    width: 400px;
+    height: 190px;
+    width: 340px;
 }
 
 .btn__left,
@@ -68,7 +68,7 @@
 
 .description__container {
     position: relative;
-    margin-top: 300px;
+    margin-top: 280px;
     font-size: $bodyMedium;
 
     p {
@@ -78,8 +78,8 @@
 
 .slide__bar {
     position: absolute;
-    top: 91%;
-    width: 1600px;
+    top: 88%;
+    width: 1420px;
     display: flex;
     flex-direction: row;
     gap: 5px;
