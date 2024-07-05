@@ -24,6 +24,7 @@
 }
 
 .menu {
+    position: relative;
     list-style: none;
     display: flex;
     flex-direction: row;
@@ -36,8 +37,18 @@
     cursor: pointer;
     font-size: $bodyMedium;
     transition: font-weight 0.1s ease-in-out;
+    position: relative;
+    padding: 0 10px;
 }
 
 .active__link {
     font-weight: $semiBold;
+}
+
+.underline {
+    position: absolute;
+    bottom: -3px;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 2px;
 }

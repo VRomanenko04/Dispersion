@@ -1,5 +1,5 @@
 'use client'
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styles from './NavBar.module.scss';
 import { motion } from 'framer-motion';
 
@@ -14,6 +14,10 @@ type NavBarProps = {
 const links = ["Website creation", "Design services", "Portfolio"];
 
 const NavBar = ({ setActiveLink, setOtherImage, setItemsIndex, activeLink, navVisible }: NavBarProps) => {
+    const [underlineStyle, setUnderlineStyle] = useState({ left: 0, width: 0 });
+
+    const navRef = useRef<HTMLUListElement>(null);
+
 
     const handleNavClick = (link: string) => {
         setActiveLink(link);
@@ -24,6 +28,27 @@ const NavBar = ({ setActiveLink, setOtherImage, setItemsIndex, activeLink, navVi
             return updatedItems;
         });
     }
+
+    useEffect(() => {
+        if (navRef.current) {
+            const activeItem = navRef.current.querySelector(`.${styles.active__link}`);
+            if (activeItem) {
+                const { offsetLeft, offsetWidth } = activeItem as HTMLElement;
+                let left = offsetLeft;
+                let width = offsetWidth;
+
+                if (activeLink === 'Website creation') {
+                    width += 5;
+                } else if (activeLink === 'Design services') {
+                    width;
+                } else if (activeLink === 'Portfolio') {
+                    width -= 5;
+                }
+
+                setUnderlineStyle({ left, width });
+            }
+        }
+    }, [activeLink]);
 
     return (
         <motion.nav 
@@ -41,7 +66,7 @@ const NavBar = ({ setActiveLink, setOtherImage, setItemsIndex, activeLink, navVi
             initial={{ opacity: 0}}
             transition={{ duration: 0.3 }}
         >
-            <ul className={styles.menu}>
+            <ul className={styles.menu} ref={navRef}>
                 {links.map((link) => (
                     <li 
                         key={link}
@@ -51,6 +76,11 @@ const NavBar = ({ setActiveLink, setOtherImage, setItemsIndex, activeLink, navVi
                         {link}
                     </li>
                 ))}
+                <motion.div 
+                    className={styles.underline}
+                    animate={underlineStyle}
+                    transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+                />
             </ul>
         </motion.nav>
     )
