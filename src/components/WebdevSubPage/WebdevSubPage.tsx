@@ -19,21 +19,21 @@ const WebdevSubPage = ({ isActive }: WebDevProps) => {
                 isStandart={true}
                 title='Basic website'
                 text='Choose one of our templates, and receive your website in the shortest terms.'
-                link='/'
+                link='/contact'
                 color="blue"
             />
             <UiSubPage 
                 isStandart={false}
                 title='Individual website'
                 text= {<>Get a website which cover your needs <br /> + more customization options</>}
-                link='/'
+                link='/contact'
                 color='blue'
             />
             <UiSubPage 
                 isStandart={true}
                 title='Personalized project'
                 text='Absolutely unique website which would make you pop up around your competitors, more functious, more'
-                link='/'
+                link='/contact'
                 color='blue'
             />
         </motion.section>

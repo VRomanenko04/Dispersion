@@ -19,21 +19,21 @@ const DesignSubPage = ({ isActive }: DesignProps) => {
                 isStandart={true}
                 title='Design guidelines'
                 text='Get  universal instruction of your visuals so every time you decided to hire a designer he can follow them'
-                link='/'
+                link='/contact'
                 color='magenta'
             />
             <UiSubPage 
                 isStandart={false}
                 title='Socials design'
                 text='Get unique design  of various complexity for your business or personal projects to stand out among competitors!  '
-                link='/'
+                link='/contact'
                 color='magenta'
             />
             <UiSubPage 
                 isStandart={true}
                 title='Personalized project'
                 text='Custom project - perfect for someone who want have more or less.'
-                link='/'
+                link='/contact'
                 color='magenta'
             />
         </motion.section>
