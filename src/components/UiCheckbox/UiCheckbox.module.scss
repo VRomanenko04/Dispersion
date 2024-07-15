@@ -1,0 +1,26 @@
+@import '../../styles/root.scss';
+
+.checkbox__container {
+    height: 27px;
+    width: 27px;
+    border-radius: 5px;
+    border: 2px #ACACAC solid;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.checkbox__agree {
+    background-color: $purple;
+}
+
+.checkmark {
+    height: 20px;
+    width: auto;
+}
+
+.error {
+    color: $magenta;
+    font-size: $bodySmall;
+}
