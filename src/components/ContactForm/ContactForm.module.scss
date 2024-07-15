@@ -27,9 +27,10 @@
         display: flex;
         flex-direction: column;
 
-        .input__content {
+        .label__content {
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
+            gap: 15px;
         }
 
         label {
@@ -53,10 +54,17 @@
     }
 }
 
+.error__input__container {
+    input {
+        outline: 2px $magenta solid !important;
+    }
+}
+
 .textarea__container {
-    div {
+    .label__content {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        gap: 20px;
     }
 
     label {
@@ -66,6 +74,7 @@
     textarea {
         resize: none;
         height: 230px;
+        width: 100%;
         margin-top: 7px;
         padding: 10px 15px;
         font-size: $bodyLarge;
@@ -76,6 +85,12 @@
         &:focus {
             outline: 2px solid $purple;
         }
+    }
+}
+
+.error__textarea__container {
+    textarea {
+        outline: 2px $magenta solid !important;
     }
 }
 

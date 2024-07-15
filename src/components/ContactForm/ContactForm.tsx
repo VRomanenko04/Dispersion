@@ -42,23 +42,27 @@ const ContactForm = () => {
         <section className={styles.wrapper}>
             <form className={styles.form__container} onSubmit={handleSubmit(submitForm)}>
                 <section className={styles.form__top}>
-                    <div className={styles.input__container}>
-                        <div className={styles.input__content}>
+                    <div className={`${styles.input__container} ${isFullNameError && styles.error__input__container}`}>
+                        <div className={styles.label__content}>
                             <label htmlFor="">Full name</label>
-                            <input type="text" {...register('fullName', {
-                                required: 'This field is required'
-                            })}/>
+                            {isFullNameError && <span className={styles.error}>{isFullNameError}</span>}
                         </div>
-                        {isFullNameError && <span className={styles.error}>{isFullNameError}</span>}
+                        <input type="text" {...register('fullName', {
+                            required: 'This field is required'
+                        })}/>
                     </div>
-                    <div className={styles.input__container}>
-                        <div className={styles.input__content}>
+                    <div className={`${styles.input__container} ${isEmailError && styles.error__input__container}`}>
+                        <div className={styles.label__content}>
                             <label htmlFor="">Email</label>
-                            <input type="email" {...register('email', {
-                                required: 'This field is required'
-                            })}/>
+                            {isEmailError && <span className={styles.error}>{isEmailError}</span>}
                         </div>
-                        {isEmailError && <span className={styles.error}>{isEmailError}</span>}
+                        <input type="email" {...register('email', {
+                            required: 'This field is required',
+                            pattern: {
+                                value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+                                message: "Invalid email adress"
+                            }
+                        })}/>
                     </div>
                     <div className={styles.input__container}>
                         <label htmlFor="">Type of proejct</label>
@@ -69,25 +73,25 @@ const ContactForm = () => {
                         <UiDropDownList fieldName='howToContact' controller={control} valuesList={ContactType} defaultValue='Email'/>
                     </div>
                     {(howToContact === 'Messenger' || howToContact === 'WhatsApp') && (
-                        <div className={styles.input__container}> 
-                            <div className={styles.input__content}>
+                        <div className={`${styles.input__container} ${isContactDetailsError && styles.error__input__container}`}> 
+                            <div className={styles.label__content}>
                                 <label htmlFor="">Your contact details</label>
-                                <input type="text" {...register('contactDetails', {
-                                    required: 'This field is required'
-                                })}/>
+                                {isContactDetailsError && <span className={styles.error}>{isContactDetailsError}</span>}
                             </div>
-                            {isContactDetailsError && <span className={styles.error}>{isContactDetailsError}</span>}
+                            <input type="text" {...register('contactDetails', {
+                                required: 'This field is required'
+                            })}/>
                         </div>
                     )}
                 </section>
-                <section className={styles.textarea__container}>
-                    <div>
+                <section className={`${styles.textarea__container} ${isMessageError && styles.error__textarea__container}`}>
+                    <div className={styles.label__content}>
                         <label htmlFor="">Tell a bit about your project  (Name, What it is about e.t.c.)</label>
-                        <textarea {...register('message', {
-                            required: 'This field is required'
-                        })}/>
+                        {isMessageError && <span className={styles.error}>{isMessageError}</span>}
                     </div>
-                    {isMessageError && <span className={styles.error}>{isMessageError}</span>}
+                    <textarea {...register('message', {
+                            required: 'This field is required'
+                    })}/>
                 </section>
                 <section className={styles.checkbox__container}>
                     <div>
