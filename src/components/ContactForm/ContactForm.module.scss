@@ -1,0 +1,122 @@
+@import '../../styles/root.scss';
+
+.wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form__container {
+    width: 90vw;
+    max-width: 1420px;
+    font-size: $bodyLarge;
+    display: flex;
+    flex-direction: column;
+}
+
+.form__top {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 40px;
+    margin: 80px 0;
+
+    .input__container {
+        display: flex;
+        flex-direction: column;
+
+        .input__content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-weight: $medium;
+        }
+
+        input {
+            max-width: 460px;
+            height: 45px;
+            padding: 0 15px;
+            margin-top: 7px;
+            font-size: $bodyLarge;
+            border-radius: 5px;
+            border: 1px solid #ACACAC;
+            transition: outline 0.1s ease-in-out;
+
+            &:focus {
+                outline: 2px solid $purple;
+            }
+        }
+    }
+}
+
+.textarea__container {
+    div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    label {
+        font-weight: $medium;
+    }
+
+    textarea {
+        resize: none;
+        height: 230px;
+        margin-top: 7px;
+        padding: 10px 15px;
+        font-size: $bodyLarge;
+        border-radius: 5px;
+        border: 1px solid #ACACAC;
+        transition: outline 0.1s ease-in-out;
+
+        &:focus {
+            outline: 2px solid $purple;
+        }
+    }
+}
+
+.checkbox__container {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    div {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .link {
+        text-decoration: underline;
+    }
+}
+
+.button {
+    width: 700px;
+    height: 45px;
+    align-self: center;
+    cursor: pointer;
+    background-color: $purple;
+    color: $white;
+    font-size: $bodyLarge;
+    font-weight: $medium;
+    border: none;
+    border-radius: 5px;
+    margin-top: 80px;
+}
+
+.error {
+    margin-top: 10px;
+    color: $magenta;
+    font-size: 14px;
+}
+
+.error__checkbox {
+    color: $magenta;
+    font-size: 14px;
+}
