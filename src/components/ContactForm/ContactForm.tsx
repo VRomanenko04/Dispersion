@@ -93,7 +93,7 @@ const ContactForm = () => {
                             required: 'This field is required'
                     })}/>
                 </section>
-                <section className={styles.checkbox__container}>
+                <section className={styles.checkbox__container} style={!isTermsAgreeError ? { marginBottom: 18}: undefined}>
                     <div>
                         <UiCheckbox controller={control}/>
                         <label htmlFor="">I agree with <Link href='/' className={styles.link}>terms & services</Link></label>
