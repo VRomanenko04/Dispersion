@@ -41,11 +41,21 @@ const Slider = () => {
     const [activeSlideIndex, setActiveSlideIndex] = useState(0);
 
     const handleNextSlide = () => {
-        setActiveSlideIndex((prev) => (prev + 1) % slides.length);
+        setActiveSlideIndex((prev) => {
+            if (prev + 1 >= slides.length) {
+                return prev; // Достигнут конец, остаемся на последнем слайде
+            }
+            return prev + 1;
+        });
     }
 
     const handleBackSlide = () => {
-        setActiveSlideIndex((prev) => (prev - 1 + slides.length) % slides.length);
+        setActiveSlideIndex((prev) => {
+            if (prev - 1 < 0) {
+                return prev; // Достигнуто начало, остаемся на первом слайде
+            }
+            return prev - 1;
+        });
     }
 
     return (
