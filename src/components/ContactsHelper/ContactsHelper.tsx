@@ -22,7 +22,7 @@ const ContactsHelper = () => {
                 className={styles.comment__container}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: isHovered ? 1 : 0 }}
-                transition={{ duration: 0.2 }}
+                transition={{ duration: 0.2, delay: 0.3 }}
             >
                 <div className={styles.triangle}></div>
                 <div className={styles.comment__block}>
