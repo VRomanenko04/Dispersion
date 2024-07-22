@@ -5,6 +5,7 @@ import styles from './ContactForm.module.scss';
 import UiDropDownList from '../UiDropDownList/UiDropDownList';
 import UiCheckbox from '../UiCheckbox/UiCheckbox';
 import { SubmitHandler, useForm } from 'react-hook-form';
+import ContactsHelper from '../ContactsHelper/ContactsHelper';
 
 const ProjectType = ['Website', 'Design project', 'Personalized project'];
 const ContactType = ['Email', 'Messenger', 'WhatsApp'];
@@ -75,7 +76,7 @@ const ContactForm = () => {
                     {(howToContact === 'Messenger' || howToContact === 'WhatsApp') && (
                         <div className={`${styles.input__container} ${isContactDetailsError && styles.error__input__container}`}> 
                             <div className={styles.label__content}>
-                                <label htmlFor="">Your contact details</label>
+                                <label className={styles.contacts__label} htmlFor="">Your contact details <ContactsHelper /></label>
                                 {isContactDetailsError && <span className={styles.error}>{isContactDetailsError}</span>}
                             </div>
                             <input type="text" {...register('contactDetails', {

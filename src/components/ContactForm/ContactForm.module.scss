@@ -55,6 +55,12 @@
     }
 }
 
+.contacts__label {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
 .error__input__container {
     input {
         outline: 2px $magenta solid !important;
