@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from 'react';
 import styles from './Slider.module.scss';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 
 import ImageSpaceDev1 from '@/assets/Image_SpaceDev_1.png';
 import ImageSpaceDev2 from '@/assets/Image_SpaceDev_2.png';
@@ -12,6 +12,7 @@ import ImageEtalon2 from '@/assets/Image_Etalon_2.png';
 import ImageEtalon3 from '@/assets/Image_Etalon_3.png';
 import ImageEtalon4 from '@/assets/Image_Etalon_4.png';
 import { motion } from 'framer-motion';
+import ImageModal from '../ImageModal/ImageModal';
 
 const slides = [
     {
@@ -39,6 +40,9 @@ const slides = [
 
 const Slider = () => {
     const [activeSlideIndex, setActiveSlideIndex] = useState(0);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [selectedImage, setSelectedImage] = useState<StaticImageData>(ImageSpaceDev1);
+    const [selectedImageDescription, setSelectedImageDescription] = useState('');
 
     const handleNextSlide = () => {
         setActiveSlideIndex((prev) => {
@@ -58,6 +62,17 @@ const Slider = () => {
         });
     }
 
+    const handleImageClick = (image: StaticImageData, description: string) => {
+        setSelectedImage(image);
+        setSelectedImageDescription(description);
+        setIsModalOpen(true);
+    }
+
+    const handleCloseModal = () => {
+        setIsModalOpen(false);
+        setSelectedImageDescription('');
+    }
+
     return (
         <section className={styles.wrapper}>
             <div className={styles.slider__container}>
@@ -69,12 +84,25 @@ const Slider = () => {
                         initial={{ opacity: 0}}
                         animate={{ opacity: index === activeSlideIndex ? 1 : 0}}
                         transition={{ duration: 0}}
+                        style={{ display: index === activeSlideIndex ? 'flex' : 'none' }}
                     >
-                        <Image src={slide.image1} alt={slide.descrition} className={styles.image__main}/>
+                        <Image src={slide.image1} alt={slide.descrition} 
+                            className={styles.image__main} 
+                            onClick={() => handleImageClick(slide.image1, slide.descrition)}
+                        />
                         <div className={styles.slide__subimages}>
-                            <Image src={slide.image2} alt={slide.descrition} className={styles.image__sub}/>
-                            <Image src={slide.image3} alt={slide.descrition} className={styles.image__sub}/>
-                            <Image src={slide.image4} alt={slide.descrition} className={styles.image__sub}/>
+                            <Image src={slide.image2} alt={slide.descrition} 
+                                className={styles.image__sub} 
+                                onClick={() => handleImageClick(slide.image2, slide.descrition)}
+                            />
+                            <Image src={slide.image3} alt={slide.descrition} 
+                                className={styles.image__sub} 
+                                onClick={() => handleImageClick(slide.image3, slide.descrition)}
+                            />
+                            <Image src={slide.image4} alt={slide.descrition} 
+                                className={styles.image__sub} 
+                                onClick={() => handleImageClick(slide.image4, slide.descrition)}
+                            />
                         </div>
                     </motion.div>
                 ))}
@@ -103,6 +131,12 @@ const Slider = () => {
                     </motion.p>
                 ))}
             </div>
+            <ImageModal 
+                image={selectedImage} 
+                imageDescription={selectedImageDescription} 
+                onClose={handleCloseModal}
+                isOpen={isModalOpen}
+            />
         </section>
     )
 }
