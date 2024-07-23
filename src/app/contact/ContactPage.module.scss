@@ -18,3 +18,27 @@
         height: 45px;
     }
 }
+
+.main__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main__container {
+    width: 90vw;
+    max-width: 1420px;
+
+    .link {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: $bodyMedium;
+        margin-top: 40px;
+
+        .icon {
+            width: 30px;
+            height: auto;
+        }
+    }
+}
