@@ -68,6 +68,11 @@
     top: 43%;
 }
 
+.btn_disable {
+    background-color: #C1C1C1;
+    cursor: not-allowed;
+}
+
 .description__container {
     position: relative;
     margin-top: 280px;
@@ -91,4 +96,5 @@
     width: auto;
     border: 3px solid #C1C1C1;
     border-radius: 10px;
+    cursor: pointer;
 }

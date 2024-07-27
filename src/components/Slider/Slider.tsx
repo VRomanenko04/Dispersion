@@ -76,7 +76,7 @@ const Slider = () => {
     return (
         <section className={styles.wrapper}>
             <div className={styles.slider__container}>
-                <button className={styles.btn__left} onClick={handleBackSlide} type='button'>&lt;</button>
+                <button className={`${styles.btn__left} ${activeSlideIndex === 0 ? styles.btn_disable : ''}`} onClick={handleBackSlide} type='button'>&lt;</button>
                 {slides.map((slide, index) => (
                     <motion.div 
                         className={styles.slide} 
@@ -106,7 +106,7 @@ const Slider = () => {
                         </div>
                     </motion.div>
                 ))}
-                <button className={styles.btn__right} onClick={handleNextSlide} type='button'>&gt;</button>
+                <button className={`${styles.btn__right} ${activeSlideIndex === 2 ? styles.btn_disable : ''}`} onClick={handleNextSlide} type='button'>&gt;</button>
             </div>
             <div className={styles.slide__bar}>
                 {slides.map((_slide, index) => (
@@ -116,6 +116,7 @@ const Slider = () => {
                         initial={{ width: '20%' }}
                         animate={{ width: index === activeSlideIndex ? '80%' : '20%', border: index === activeSlideIndex ? '3px solid #5116FB' : '3px solid #C1C1C1'}}
                         transition={{ width: { duration: 0.3 }, border: { delay: 0.15} }}
+                        onClick={() => setActiveSlideIndex(index)}
                     ></motion.div>
                 ))}
             </div>
