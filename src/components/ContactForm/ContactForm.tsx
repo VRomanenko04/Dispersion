@@ -34,9 +34,29 @@ const ContactForm = () => {
     const isMessageError = formState.errors['email']?.message;
     const isTermsAgreeError = formState.errors['isTermsAgree']?.message;
 
-    const submitForm: SubmitHandler<ContactFormType> = (data) => {
+    const submitForm: SubmitHandler<ContactFormType> = async (data) => {
         console.log(data);
-        reset();
+
+        const response = await fetch('/api/sendMail', {
+            method: 'POST',
+            body: JSON.stringify({
+                fullName: data.fullName,
+                email: data.email,
+                projectType: data.projectType,
+                howToContact: data.howToContact,
+                contactDetails: data.contactDetails,
+                message: data.message,
+            }),
+        });
+
+        if (response.ok) {
+            // Обработка успешной отправки
+            alert('Письмо успешно отправлено!');
+            reset();
+        } else {
+            // Обработка ошибки отправки
+            alert('Ошибка при отправке письма');
+        }
     }
 
     return (
