@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "@/styles/globals.scss";
+import '@/app/firebase';
 
 export const metadata: Metadata = {
   title: "Dispersion digital agency",
