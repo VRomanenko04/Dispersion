@@ -4,7 +4,6 @@ import Logo_wave from '@/assets/dispersion_wave.svg';
 import Link from "next/link";
 import OurSpecialty from "@/components/OurSpecialty/OurSpecialty";
 import WorkExamples from "@/components/WorkExamples/WorkExamples";
-import Navigation from "@/components/Navigation/Navigation";
 import { Be_Vietnam_Pro } from "next/font/google";
 import SubPages from "@/components/SubPages/SubPages";
 
