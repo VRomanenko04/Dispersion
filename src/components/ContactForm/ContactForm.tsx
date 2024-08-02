@@ -6,6 +6,7 @@ import UiDropDownList from '../UiDropDownList/UiDropDownList';
 import UiCheckbox from '../UiCheckbox/UiCheckbox';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import ContactsHelper from '../ContactsHelper/ContactsHelper';
+import { PostNewProjectData } from '@/services/PostData';
 
 const ProjectType = ['Website', 'Design project', 'Personalized project'];
 const ContactType = ['Email', 'Messenger', 'WhatsApp'];
@@ -35,24 +36,35 @@ const ContactForm = () => {
     const isTermsAgreeError = formState.errors['isTermsAgree']?.message;
 
     const submitForm: SubmitHandler<ContactFormType> = async (data) => {
-        console.log(data);
+        const requestBody: { [key: string]: any } = {
+            fullName: data.fullName,
+            email: data.email,
+            projectType: data.projectType,
+            howToContact: data.howToContact,
+            message: data.message,
+        };
+
+        if (data.contactDetails) {
+            Object.assign(requestBody, { contactDetails: data.contactDetails });
+        }
 
         const response = await fetch('/api/sendMail', {
             method: 'POST',
-            body: JSON.stringify({
-                fullName: data.fullName,
-                email: data.email,
-                projectType: data.projectType,
-                howToContact: data.howToContact,
-                contactDetails: data.contactDetails,
-                message: data.message,
-            }),
+            body: JSON.stringify(requestBody),
         });
 
         if (response.ok) {
-            // Обработка успешной отправки
-            alert('Письмо успешно отправлено!');
-            reset();
+            // Отправка данных в Firebase Realtime Database
+            try {
+                PostNewProjectData( requestBody, data.fullName);
+
+                alert('Письмо успешно отправлено и данные сохранены в базе данных!');
+            } catch (err) {
+                console.error('Ошибка при сохранении данных в базе данных:', err);
+                alert('Письмо успешно отправлено, но возникла ошибка при сохранении данных в базе данных');
+            }
+
+            reset(); // Сброс формы после успешной отправки и сохранения
         } else {
             // Обработка ошибки отправки
             alert('Ошибка при отправке письма');
