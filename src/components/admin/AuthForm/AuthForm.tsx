@@ -25,7 +25,7 @@ const AuthForm = () => {
             onAuthStateChanged(auth, (user) => {
                 if (user) {
                     console.log('User has been logined')
-                    router.push('/');
+                    router.push('/general');
                 }
             });
         })
@@ -35,7 +35,7 @@ const AuthForm = () => {
         onAuthStateChanged(auth, (user) => {
             if (user) {
                 console.log('User has been logined')
-                router.push('/');
+                router.push('/general');
             }
         });
     }, []);
