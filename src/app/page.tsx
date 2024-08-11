@@ -2,10 +2,10 @@ import styles from "@/styles/mainPage.module.scss";
 import Image from "next/image";
 import Logo_wave from '@/assets/dispersion_wave.svg';
 import Link from "next/link";
-import OurSpecialty from "@/components/OurSpecialty/OurSpecialty";
-import WorkExamples from "@/components/WorkExamples/WorkExamples";
+import OurSpecialty from "@/components/user/OurSpecialty/OurSpecialty";
+import WorkExamples from "@/components/user/WorkExamples/WorkExamples";
 import { Be_Vietnam_Pro } from "next/font/google";
-import SubPages from "@/components/SubPages/SubPages";
+import SubPages from "@/components/user/SubPages/SubPages";
 
 const beVietnamPro = Be_Vietnam_Pro({subsets: ["latin"], weight: ["400", "500", "600", "700"] });
 
