@@ -12,7 +12,10 @@ export default function AdminLayout({
         <html lang="en">
             <body>
                 <Header />
-                {children}
+                <main>
+                    {/* NavBar */}
+                    {children}
+                </main>
             </body>
         </html>
     );
