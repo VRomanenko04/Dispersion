@@ -19,7 +19,9 @@ export default function AdminLayout({
                     display: 'flex',
                     flexDirection: 'row',
                     gap: 20,
-                    backgroundColor: '#F3F3F3'
+                    backgroundColor: '#F3F3F3',
+                    height: '100vh',
+                    overflow: 'hidden'
                 }}>
                     <NavBar />
                     {children}
