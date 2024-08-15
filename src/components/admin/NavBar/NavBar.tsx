@@ -18,7 +18,7 @@ const links = [
     },
     {
         text: 'Заявки',
-        link: '/orders',
+        link: '/orders/consideration',
         icon: ordersIcon
     },
     {
