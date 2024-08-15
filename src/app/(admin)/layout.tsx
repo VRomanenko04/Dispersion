@@ -18,7 +18,7 @@ export default function AdminLayout({
                 <main style={{
                     display: 'flex',
                     flexDirection: 'row',
-                    gap: 40,
+                    gap: 20,
                     backgroundColor: '#F3F3F3'
                 }}>
                     <NavBar />
