@@ -1,0 +1,73 @@
+@import '../../../styles/root.scss';
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    position: fixed;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    background-color: rgba(0, 0, 0, 0.39);
+
+    transition: opacity 100ms ease-in-out;
+}
+
+.wrapper_open {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.modal {
+    background-color: #fff;
+    padding: 30px;
+    transform: scale(0);
+    transition: transform 200ms ease-in-out;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+.modal_open {
+    transform: scale(1);
+}
+
+.title {
+    font-size: $bodyMedium;
+}
+
+.btns {
+    display: flex;
+    gap: 15px;
+    font-size: $bodySmall;
+
+    button {
+        height: 35px;
+        width: 170px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        font-size: $bodySmall;
+    }
+
+    .confirm__btn {
+        color: #fff;
+        background-color: $magenta;
+    }
+
+    .dicline__btn {
+        color: #393939;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .modal {
+        max-width: 270px;
+    }
+}
