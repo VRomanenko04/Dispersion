@@ -20,7 +20,7 @@ export default function AdminLayout({
                     flexDirection: 'row',
                     gap: 20,
                     backgroundColor: '#F3F3F3',
-                    height: '100vh',
+                    height: 'calc(100vh - 60px)',
                     overflow: 'hidden'
                 }}>
                     <NavBar />
