@@ -1,0 +1,33 @@
+.filter__container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 1150px;
+    padding-left: 1px;
+    padding-bottom: 10px;
+    gap: 30px;
+}
+
+.prev {
+    width: 98px;
+    border-right: 1.5px #d1d1d1 solid;
+
+    p {
+        padding-left: 10px;
+    }
+}
+
+.name {
+    width: 306px;
+    border-right: 1.5px #d1d1d1 solid;
+}
+
+.order__code {
+    width: 207px;
+    margin-right: 10px;
+    border-right: 1.5px #d1d1d1 solid;
+}
+
+.empty__wrap {
+    width: 531px;
+}
