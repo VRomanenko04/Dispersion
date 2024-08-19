@@ -1,0 +1,56 @@
+@import '../../../styles/root.scss';
+
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 25px;
+    padding: 15px;
+    padding-bottom: 30px;
+}
+
+.title {
+    font-size: $bodyMedium;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input__container {
+    display: flex;
+    flex-direction: column;
+
+    label {
+        color: #646464;
+        font-size: $bodySmall;
+        margin-bottom: 5px;
+    }
+
+    input {
+        width: 320px;
+        height: 40px;
+        border-radius: 5px;
+        border: 1px solid #d9d9d9;
+        background-color: $white;
+        padding: 0 5px;
+        font-size: $bodySmall;
+
+        &:focus {
+            outline: 2px solid $blue;
+        }
+    }
+}
+
+.btn {
+    margin-top: 30px;
+    height: 36px;
+    font-size: $bodySmall;
+    background-color: $blue;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
