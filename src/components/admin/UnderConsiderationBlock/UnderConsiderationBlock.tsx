@@ -10,6 +10,7 @@ type ProjectObject = {
     howToContact: string
     message: string
     projectType: string
+    orderCode: string
 }
 
 const UnderConsiderationBlock = () => {
@@ -47,7 +48,7 @@ const UnderConsiderationBlock = () => {
             <div>
                 {underConsiderationProjects.map((project, index) => (
                     <div key={index}>
-                        <UnderConsiderationProject fullName={project.fullName} email={project.email} message={project.message} projectType={project.projectType} orderCode='№ HES123432O'/>
+                        <UnderConsiderationProject fullName={project.fullName} email={project.email} message={project.message} projectType={project.projectType} orderCode={project.orderCode}/>
                     </div>
                 ))}
             </div>
