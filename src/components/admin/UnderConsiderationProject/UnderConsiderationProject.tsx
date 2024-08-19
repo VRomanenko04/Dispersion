@@ -5,6 +5,7 @@ import Image from 'next/image';
 import checkmark from '@/assets/check_mark_icon.svg';
 import dicline from '@/assets/dicline_icon.svg';
 import DeleteModalWindow from '../DeleteModalWindow/DeleteModalWindow';
+import { OrderRejection } from '@/services/OrderRejection';
 
 type UnderConsiderationProjectProps = {
     orderCode: string
@@ -18,6 +19,13 @@ type UnderConsiderationProjectProps = {
 const UnderConsiderationProject = (props: UnderConsiderationProjectProps) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
+    const handleDeclineOrder = async () => {
+        OrderRejection(props.fullName).then(() => {
+            setIsModalOpen(false);
+            window.location.reload();
+        })
+    }
+
     return (
         <>
             <div className={styles.container}>
@@ -25,7 +33,7 @@ const UnderConsiderationProject = (props: UnderConsiderationProjectProps) => {
                     <div></div>
                 </div>
                 <h6 className={styles.title}>{props.fullName}</h6>
-                <p className={styles.order__code}>{props.orderCode}</p>
+                <p className={styles.order__code}>№ {props.orderCode}</p>
                 <div className={styles.buttons__container}>
                     <button className={styles.accept}>
                         <Image src={checkmark} alt='Checkmark icon'/>
@@ -37,7 +45,7 @@ const UnderConsiderationProject = (props: UnderConsiderationProjectProps) => {
                     </button>
                 </div>
             </div>
-            <DeleteModalWindow setIsOpen={setIsModalOpen} isOpen={isModalOpen}/>
+            <DeleteModalWindow setIsOpen={setIsModalOpen} isOpen={isModalOpen} deleteFunction={handleDeclineOrder}/>
         </>
     )
 }
