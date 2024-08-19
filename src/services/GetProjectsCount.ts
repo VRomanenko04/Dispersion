@@ -3,7 +3,7 @@ import { get, ref } from 'firebase/database';
 
 type ProjectsCount = {
     under_consideration: number;
-    active: number;
+    accepted: number;
     declined: number;
 };
 
@@ -19,8 +19,8 @@ export const GetProjectsCount = async (): Promise<ProjectsCount> => {
                 under_consideration: projectsData.under_consideration 
                     ? Object.keys(projectsData.under_consideration).length 
                     : 0,
-                active: projectsData.active 
-                    ? Object.keys(projectsData.active).length 
+                accepted: projectsData.accepted 
+                    ? Object.keys(projectsData.accepted).length 
                     : 0,
                 declined: projectsData.declined 
                     ? Object.keys(projectsData.declined).length 
@@ -31,7 +31,7 @@ export const GetProjectsCount = async (): Promise<ProjectsCount> => {
         } else {
             return {
                 under_consideration: 0,
-                active: 0,
+                accepted: 0,
                 declined: 0
             };
         }
