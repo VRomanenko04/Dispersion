@@ -18,6 +18,7 @@ interface MailData {
     howToContact: string;
     contactDetails?: string;
     message: string;
+    orderCode: string;
 };
 
 export async function POST(req: NextRequest) {
@@ -32,7 +33,7 @@ export async function POST(req: NextRequest) {
             from: process.env.SENDER_MAIL,
             to: process.env.MAIL_TO_RECEIVING,
             subject: 'Новый запрос',
-            text: `Имя: ${requestData.fullName}\nEmail: ${requestData.email}\nКак связаться: ${requestData.howToContact}\n${contactDetailsString}\nТип проекта: ${requestData.projectType}\nОписание: ${requestData.message}`,
+            text: `Имя: ${requestData.fullName}\nEmail: ${requestData.email}\nКак связаться: ${requestData.howToContact}\n${contactDetailsString}\nТип проекта: ${requestData.projectType}\nНомер заказа: ${requestData.orderCode}\nОписание: ${requestData.message}`,
         };
 
         await transporter.sendMail(mailOptions);
