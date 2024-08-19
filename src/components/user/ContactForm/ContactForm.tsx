@@ -7,6 +7,7 @@ import UiCheckbox from '../UiCheckbox/UiCheckbox';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import ContactsHelper from '../ContactsHelper/ContactsHelper';
 import { PostNewProjectData } from '@/services/PostData';
+import { CreateOrderCode } from '@/services/CreateOrderCode';
 
 const ProjectType = ['Website', 'Design project', 'Personalized project'];
 const ContactType = ['Email', 'Messenger', 'WhatsApp'];
@@ -36,12 +37,15 @@ const ContactForm = () => {
     const isTermsAgreeError = formState.errors['isTermsAgree']?.message;
 
     const submitForm: SubmitHandler<ContactFormType> = async (data) => {
+        const orderCode = await CreateOrderCode(data.projectType as 'Website' | 'Design project' | 'Personalized project');
+
         const requestBody: { [key: string]: any } = {
             fullName: data.fullName,
             email: data.email,
             projectType: data.projectType,
             howToContact: data.howToContact,
             message: data.message,
+            orderCode: orderCode,
         };
 
         if (data.contactDetails) {
