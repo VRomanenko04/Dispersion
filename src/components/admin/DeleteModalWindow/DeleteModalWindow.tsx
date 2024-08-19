@@ -6,7 +6,7 @@ import UiPopUp from '../UiPopUp/UiPopUp';
 type DeleteModalWindowProps = {
     isOpen: boolean
     setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
-    deleteFunction?: () => void
+    deleteFunction: () => void
 }
 
 const DeleteModalWindow = ({ isOpen, setIsOpen, deleteFunction }: DeleteModalWindowProps) => {
