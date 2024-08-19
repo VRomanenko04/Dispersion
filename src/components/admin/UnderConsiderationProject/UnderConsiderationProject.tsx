@@ -6,6 +6,7 @@ import checkmark from '@/assets/check_mark_icon.svg';
 import dicline from '@/assets/dicline_icon.svg';
 import DeleteModalWindow from '../DeleteModalWindow/DeleteModalWindow';
 import { OrderRejection } from '@/services/OrderRejection';
+import AcceptProjectModalWindow from '../AcceptProjectModalWindow/AcceptProjectModalWindow';
 
 type UnderConsiderationProjectProps = {
     orderCode: string
@@ -17,11 +18,13 @@ type UnderConsiderationProjectProps = {
 }
 
 const UnderConsiderationProject = (props: UnderConsiderationProjectProps) => {
-    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+    const [isAcceptModalOpen, setIsAcceptModalOpen] = useState(false);
+
 
     const handleDeclineOrder = async () => {
         OrderRejection(props.fullName).then(() => {
-            setIsModalOpen(false);
+            setIsDeleteModalOpen(false);
             window.location.reload();
         })
     }
@@ -35,17 +38,18 @@ const UnderConsiderationProject = (props: UnderConsiderationProjectProps) => {
                 <h6 className={styles.title}>{props.fullName}</h6>
                 <p className={styles.order__code}>№ {props.orderCode}</p>
                 <div className={styles.buttons__container}>
-                    <button className={styles.accept}>
+                    <button className={styles.accept} onClick={() => setIsAcceptModalOpen(true)}>
                         <Image src={checkmark} alt='Checkmark icon'/>
                         Принять
                     </button>
-                    <button className={styles.dicline} onClick={() => setIsModalOpen(prev => !prev)}>
+                    <button className={styles.dicline} onClick={() => setIsDeleteModalOpen(true)}>
                         <Image src={dicline} alt='Dicline icon'/>
                         Отклонить
                     </button>
                 </div>
             </div>
-            <DeleteModalWindow setIsOpen={setIsModalOpen} isOpen={isModalOpen} deleteFunction={handleDeclineOrder}/>
+            <DeleteModalWindow setIsOpen={setIsDeleteModalOpen} isOpen={isDeleteModalOpen} deleteFunction={handleDeclineOrder}/>
+            <AcceptProjectModalWindow setIsOpen={setIsAcceptModalOpen} isOpen={isAcceptModalOpen}/>
         </>
     )
 }
