@@ -6,33 +6,37 @@ export const CreateOrderCode = async (projectType: 'Website' | 'Design project' 
     try {
         const projectsRef = ref(database, 'projects/')
         const snapshot = await get(projectsRef);
-    
+
+        let totalCount = 1;
+
         if (snapshot.exists()) {
             const projectsData = snapshot.val();
     
             const underConsiderationCount = projectsData.under_consideration ? Object.keys(projectsData.under_consideration).length : 0;
-            const activeCount = projectsData.active ? Object.keys(projectsData.active).length : 0;
+            const acceptedCount = projectsData.accepted ? Object.keys(projectsData.accepted).length : 0;
             const declinedCount = projectsData.declined ? Object.keys(projectsData.declined).length : 0;
     
-            const totalCount = underConsiderationCount + activeCount + declinedCount + 1;
-    
-            const prefix = projectType === 'Website' 
-                ? 'WP' 
-                : projectType === 'Design project' 
-                ? 'DP' 
-                : projectType === 'Personalized project'
-                ? 'PP'
-                : 'UP';
-    
-            console.log('Prefix:', prefix);
-    
-            const orderCode = `${prefix}${totalCount.toString().padStart(6, '0')}`;
-            console.log('Order Code:', orderCode);
-            return orderCode;
-        } else {
-            console.log('Error with count.');
-            return null;
+            totalCount = underConsiderationCount + acceptedCount + declinedCount + 1;
         }
+
+        const randomNumber = Math.floor(100 + Math.random() * 900); 
+
+        // Определяем количество нулей, чтобы общая длина была 8
+        const numberPart = randomNumber.toString().padStart(3, '0'); 
+        const totalCountPart = totalCount.toString().padStart(4, '0'); // оставляем 5 символов для totalCount
+        const codeWithZeros = `${totalCountPart}${numberPart}`;
+
+        const prefix = projectType === 'Website' 
+            ? 'WP' 
+            : projectType === 'Design project' 
+            ? 'DP' 
+            : projectType === 'Personalized project'
+            ? 'PP'
+            : 'UP';
+
+        const orderCode = `${prefix}${codeWithZeros}`;
+        return orderCode;
+
     } catch(err) {
         console.log(err);
         throw err;
