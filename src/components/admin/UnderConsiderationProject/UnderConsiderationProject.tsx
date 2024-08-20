@@ -52,11 +52,17 @@ const UnderConsiderationProject = (props: UnderConsiderationProjectProps) => {
                     <h6 className={styles.title}>{props.fullName}</h6>
                     <p className={styles.order__code}>{isProjectOpen && 'Код заказа: '}№ {props.orderCode}</p>
                     <div className={styles.buttons__container}>
-                        <button className={styles.accept} onClick={() => setIsAcceptModalOpen(true)}>
+                        <button className={styles.accept} onClick={(e) => {
+                            e.stopPropagation();
+                            setIsAcceptModalOpen(true)
+                        }}>
                             <Image src={checkmark} alt='Checkmark icon'/>
                             Принять
                         </button>
-                        <button className={styles.dicline} onClick={() => setIsDeleteModalOpen(true)}>
+                        <button className={styles.dicline} onClick={(e) => {
+                            e.stopPropagation();
+                            setIsDeleteModalOpen(true)
+                        }}>
                             <Image src={dicline} alt='Dicline icon'/>
                             Отклонить
                         </button>
