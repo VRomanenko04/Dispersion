@@ -11,6 +11,7 @@ type ProjectObject = {
     message: string
     projectType: string
     orderCode: string
+    contactDetails?: string
 }
 
 const UnderConsiderationBlock = () => {
@@ -27,7 +28,6 @@ const UnderConsiderationBlock = () => {
     };
 
     useEffect(() => {
-        console.log('initialized');
         inizializeProjects();
     }, []);
 
@@ -45,10 +45,18 @@ const UnderConsiderationBlock = () => {
                 </div>
                 <div className={styles.empty__wrap}></div>
             </div>
-            <div>
+            <div className={styles.projects__container}>
                 {underConsiderationProjects.map((project, index) => (
                     <div key={index}>
-                        <UnderConsiderationProject fullName={project.fullName} email={project.email} message={project.message} projectType={project.projectType} orderCode={project.orderCode}/>
+                        <UnderConsiderationProject 
+                            fullName={project.fullName} 
+                            email={project.email} 
+                            message={project.message} 
+                            projectType={project.projectType} 
+                            orderCode={project.orderCode} 
+                            howToContact={project.howToContact}
+                            additionalContact={project.contactDetails}
+                        />
                     </div>
                 ))}
             </div>
