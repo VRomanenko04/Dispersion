@@ -1,21 +1,25 @@
 'use client';
 import React from 'react';
 import styles from './AcceptProjectModalWindow.module.scss';
-import { useForm } from 'react-hook-form';
+import { SubmitHandler, useForm } from 'react-hook-form';
 import UiPopUp from '../UiPopUp/UiPopUp';
 
 type AcceptProjectModalWindowProps = {
     isOpen: boolean
     setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
+    acceptFunction: (projectName: string, timeForProject: number) => Promise<void>
 }
 
-const AcceptProjectModalWindow = ({ isOpen, setIsOpen }: AcceptProjectModalWindowProps) => {
-    const { register, handleSubmit } = useForm();
+type AcceptProjectFormType = {
+    projectName: string
+    timeForProject: number
+}
 
-    const acceptProject = () => {
-        console.log('Accepted');
-        setIsOpen(false);
-        window.location.reload();
+const AcceptProjectModalWindow = ({ isOpen, setIsOpen, acceptFunction }: AcceptProjectModalWindowProps) => {
+    const { register, handleSubmit } = useForm<AcceptProjectFormType>();
+
+    const acceptProject: SubmitHandler<AcceptProjectFormType> = (data) => {
+        acceptFunction(data.projectName, data.timeForProject);
     }
 
     return (
@@ -32,10 +36,11 @@ const AcceptProjectModalWindow = ({ isOpen, setIsOpen }: AcceptProjectModalWindo
                     <div className={styles.input__container}>
                         <label htmlFor="timeForProject">Время выполнения заказа (дней)</label>
                         <input type="number" id='timeForProject' {...register('timeForProject', {
-                            required: 'This field is required'
+                            required: 'This field is required',
+                            valueAsNumber: true,
                         })}/>
                     </div>
-                    <button className={styles.btn}>Принять</button>
+                    <button className={styles.btn} type='submit'>Принять</button>
                 </form>
             </div>
         </UiPopUp>

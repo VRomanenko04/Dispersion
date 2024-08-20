@@ -7,6 +7,7 @@ import dicline from '@/assets/dicline_icon.svg';
 import DeleteModalWindow from '../DeleteModalWindow/DeleteModalWindow';
 import { OrderRejection } from '@/services/OrderRejection';
 import AcceptProjectModalWindow from '../AcceptProjectModalWindow/AcceptProjectModalWindow';
+import { AcceptOrder } from '@/services/AcceptOrder';
 
 type UnderConsiderationProjectProps = {
     orderCode: string
@@ -23,8 +24,15 @@ const UnderConsiderationProject = (props: UnderConsiderationProjectProps) => {
 
 
     const handleDeclineOrder = async () => {
-        OrderRejection(props.fullName).then(() => {
+        await OrderRejection(props.fullName).then(() => {
             setIsDeleteModalOpen(false);
+            window.location.reload();
+        })
+    }
+
+    const handleAcceptOrder = async (projectName: string, timeForProject: number) => {
+        await AcceptOrder(props.fullName, projectName, timeForProject).then(() => {
+            setIsAcceptModalOpen(false);
             window.location.reload();
         })
     }
@@ -49,7 +57,7 @@ const UnderConsiderationProject = (props: UnderConsiderationProjectProps) => {
                 </div>
             </div>
             <DeleteModalWindow setIsOpen={setIsDeleteModalOpen} isOpen={isDeleteModalOpen} deleteFunction={handleDeclineOrder}/>
-            <AcceptProjectModalWindow setIsOpen={setIsAcceptModalOpen} isOpen={isAcceptModalOpen}/>
+            <AcceptProjectModalWindow setIsOpen={setIsAcceptModalOpen} isOpen={isAcceptModalOpen} acceptFunction={handleAcceptOrder}/>
         </>
     )
 }
