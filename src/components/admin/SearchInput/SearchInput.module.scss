@@ -1,0 +1,28 @@
+@import '../../../styles/root.scss';
+
+.input__container {
+    width: 460px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.input {
+    background: url("../../../assets/search_icon.svg") no-repeat left;
+    background-position: 3px center;
+    padding-left: 45px;
+    height: 40px;
+    width: 100%;
+    border: 2px solid #d9d9d9;
+    border-radius: 5px;
+    font-size: $bodySmall;
+}
+
+.input__divider {
+    position: absolute;
+    position: absolute;
+    left: 38px;
+    top: 5px;
+    bottom: 5px;
+    width: 1px;
+    background-color: #d9d9d9;
+}
