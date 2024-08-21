@@ -1,6 +1,8 @@
+'use client'
 import React from 'react';
 import styles from './GeneralPanel.module.scss';
 import ActiveOrdersBlock from '@/components/admin/ActiveOrdersBlock/ActiveOrdersBlock';
+import ProtectedPage from '@/components/admin/ProtectedPage';
 
 
 const GeneralPanel = () => {
@@ -17,4 +19,4 @@ const GeneralPanel = () => {
     )
 }
 
-export default GeneralPanel;
+export default ProtectedPage(GeneralPanel);
