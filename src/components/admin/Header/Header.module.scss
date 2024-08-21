@@ -12,9 +12,23 @@
 .header__container {
     width: 90vw;
     max-width: 1420px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
     .logo {
         width: auto;
         height: 45px;
     }
+}
+
+.logout__container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: #fff;
+}
+
+.logout__icon {
+    cursor: pointer;
 }
