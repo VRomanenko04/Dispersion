@@ -41,7 +41,7 @@ const NavBar = () => {
             <ul className={styles.list}>
                 {links.map((link) => (
                     <Link 
-                        className={`${styles.link} ${currentPath === link.link ? styles.active__link : ''}`}
+                        className={`${styles.link} ${(currentPath.startsWith('/orders') && link.link.startsWith('/orders')) || currentPath === link.link ? styles.active__link : ''}`}
                         key={link.text} 
                         href={link.link}
                     >
