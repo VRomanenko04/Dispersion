@@ -31,7 +31,7 @@ const OrdersNavBar = () => {
         <nav className={styles.container}>
             <ul className={styles.list}>
                 <Link className={`${styles.link} ${currentPath === '/orders/consideration' ? styles.active : ''}`} href='/orders/consideration'>На расмотрении <p>({projectsCount.under_consideration})</p></Link>
-                <Link className={`${styles.link} ${currentPath === '/orders/active' ? styles.active : ''}`} href='/orders/active'>Принятые заявки <p>({projectsCount.accepted})</p></Link>
+                <Link className={`${styles.link} ${currentPath === '/orders/accepted' ? styles.active : ''}`} href='/orders/accepted'>Принятые заявки <p>({projectsCount.accepted})</p></Link>
                 <Link className={`${styles.link} ${currentPath === '/orders/declined' ? styles.active : ''}`} href='/orders/declined'>Отклонённые заявки <p>({projectsCount.declined})</p></Link>
             </ul>
         </nav>
