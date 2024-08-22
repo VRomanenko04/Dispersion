@@ -17,7 +17,6 @@ type UnderConsiderationProjectProps = {
     additionalContact?: string
     howToContact: string
     message: string
-    projectType: string
 }
 
 const UnderConsiderationProject = (props: UnderConsiderationProjectProps) => {

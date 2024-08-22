@@ -52,7 +52,6 @@ const UnderConsiderationBlock = () => {
                             fullName={project.fullName} 
                             email={project.email} 
                             message={project.message} 
-                            projectType={project.projectType} 
                             orderCode={project.orderCode} 
                             howToContact={project.howToContact}
                             additionalContact={project.contactDetails}
