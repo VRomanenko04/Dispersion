@@ -46,8 +46,8 @@ const UnderConsiderationBlock = () => {
                 <div className={styles.empty__wrap}></div>
             </div>
             <div className={styles.projects__container}>
-                {underConsiderationProjects.map((project, index) => (
-                    <div key={index}>
+                {underConsiderationProjects.map((project) => (
+                    <div key={project.orderCode}>
                         <UnderConsiderationProject 
                             fullName={project.fullName} 
                             email={project.email} 
