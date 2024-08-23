@@ -1,0 +1,42 @@
+@import '../../../styles/root.scss';
+
+.filter__container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 1148px;
+    padding-left: 1px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    gap: 20px;
+    border: 0.5px solid #d9d9d9;
+    border-bottom: none;
+}
+
+.prev {
+    width: 101px;
+    border-right: 1.5px #d1d1d1 solid;
+
+    p {
+        padding-left: 10px;
+    }
+}
+
+.name {
+    width: 314px;
+    border-right: 1.5px #d1d1d1 solid;
+}
+
+.order__code {
+    width: 211px;
+    border-right: 1.5px #d1d1d1 solid;
+}
+
+.time__left {
+    width: 390px;
+    border-right: 1.5px #d1d1d1 solid;
+}
+
+.status {
+    width: 118px;
+}
