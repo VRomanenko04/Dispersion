@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import styles from './AcceptedProject.module.scss';
 import { AnimatePresence, motion } from 'framer-motion';
+import CompleteModalWindow from '../CompleteModalWindow/CompleteModalWindow';
 
 type AcceptedProjectProps = {
     email: string
@@ -16,6 +17,7 @@ type AcceptedProjectProps = {
 
 const AcceptedProject = (props: AcceptedProjectProps) => {
     const [isProjectOpen, setIsProjectOpen] = useState(false);
+    const [isCompleteModalOpen, setIsCompleteModalOpen] = useState(false);
     const [timeToDeadline, setTimeToDeadline] = useState('');
 
     useEffect(() => {
@@ -32,6 +34,10 @@ const AcceptedProject = (props: AcceptedProjectProps) => {
             setTimeToDeadline('Срок истек');
         }
     }, []);
+
+    const completeOrder = async () => {
+        console.log('Completed')
+    }
 
     const containerStyles = `${!isProjectOpen ? styles.container : styles.open__container}`
 
@@ -56,11 +62,16 @@ const AcceptedProject = (props: AcceptedProjectProps) => {
                         transition={{ duration: 0.2 }}
                     >
                         {isProjectOpen && <motion.button 
+                                            onClick={(e) => {
+                                                e.stopPropagation();
+                                                setIsCompleteModalOpen(true)
+                                            }}
                                             initial={{ opacity: 0 }} 
                                             animate={{ opacity: 1 }} 
                                             exit={{ opacity: 0}} 
                                             transition={{ duration: 0.1 }} 
-                                            className={styles.btn}>Завершить
+                                            className={styles.btn}>
+                                                Завершить
                                         </motion.button>}
                         <div className={styles.contact__container}>
                                 <p className={styles.sub__title}>Контактная информация:</p>
@@ -80,6 +91,7 @@ const AcceptedProject = (props: AcceptedProjectProps) => {
                     </motion.div>
                 )}
             </AnimatePresence>
+            <CompleteModalWindow isOpen={isCompleteModalOpen} setIsOpen={setIsCompleteModalOpen} completeFunction={completeOrder}/>
         </section>
     )
 }
