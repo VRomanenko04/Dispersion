@@ -1,0 +1,35 @@
+@import '../../../styles/root.scss';
+
+.title {
+    font-size: $bodyMedium;
+}
+
+.btns {
+    display: flex;
+    gap: 15px;
+    font-size: $bodySmall;
+
+    button {
+        height: 35px;
+        width: 170px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        font-size: $bodySmall;
+    }
+
+    .confirm__btn {
+        color: #fff;
+        background-color: $blue;
+    }
+
+    .dicline__btn {
+        color: #393939;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .modal {
+        max-width: 270px;
+    }
+}
