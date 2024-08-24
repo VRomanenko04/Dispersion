@@ -82,12 +82,16 @@
     border-right: 1.5px #d1d1d1 solid;
 }
 
-.status {
+.status__active, .status__done {
     display: flex;
     align-items: center;
     width: 118px;
     color: $blue;
     font-weight: $semiBold;
+}
+
+.status__done {
+    color: #d9d9d9;
 }
 
 .additional__container {
