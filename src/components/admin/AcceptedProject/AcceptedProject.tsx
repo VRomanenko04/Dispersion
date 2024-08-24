@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import styles from './AcceptedProject.module.scss';
 import { AnimatePresence, motion } from 'framer-motion';
 import CompleteModalWindow from '../CompleteModalWindow/CompleteModalWindow';
+import { CompleteOrder } from '@/services/CompleteOrder';
 
 type AcceptedProjectProps = {
     email: string
@@ -11,6 +12,7 @@ type AcceptedProjectProps = {
     message: string
     orderCode: string
     contactDetails?: string
+    projectStatus?: string
     projectName: string
     deadline: string
 }
@@ -36,7 +38,10 @@ const AcceptedProject = (props: AcceptedProjectProps) => {
     }, []);
 
     const completeOrder = async () => {
-        console.log('Completed')
+        CompleteOrder(props.projectName).then(() => {
+            setIsCompleteModalOpen(false);
+            window.location.reload();
+        })
     }
 
     const containerStyles = `${!isProjectOpen ? styles.container : styles.open__container}`
@@ -49,8 +54,12 @@ const AcceptedProject = (props: AcceptedProjectProps) => {
                 </div>
                 <h6 className={styles.title}>{props.projectName}</h6>
                 <p className={styles.order__code}>{isProjectOpen && 'Код заказа: '}№ {props.orderCode}</p>
-                <p className={styles.deadline}>{timeToDeadline}</p>
-                <p className={styles.status}>В процессе</p>
+                <p className={styles.deadline}>{props.projectStatus ? '0д. 0ч.' : timeToDeadline}</p>
+                {props.projectStatus ? (
+                    <p className={styles.status__done}>Завершен</p>
+                ) : (
+                    <p className={styles.status__active}>В процессе</p>
+                )}
             </div>
             <AnimatePresence>
                 {isProjectOpen && (
@@ -61,7 +70,7 @@ const AcceptedProject = (props: AcceptedProjectProps) => {
                         exit={{ height: 0 }}
                         transition={{ duration: 0.2 }}
                     >
-                        {isProjectOpen && <motion.button 
+                        {(isProjectOpen && !props.projectStatus) && <motion.button 
                                             onClick={(e) => {
                                                 e.stopPropagation();
                                                 setIsCompleteModalOpen(true)
