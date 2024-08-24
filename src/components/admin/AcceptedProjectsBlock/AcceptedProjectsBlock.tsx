@@ -13,6 +13,7 @@ type AcceptedProjectObject = {
     projectType: string
     orderCode: string
     contactDetails?: string
+    status?: string
     projectName: string
     deadline: string
 }
@@ -64,6 +65,7 @@ const AcceptedProjectsBlock = () => {
                             orderCode={project.orderCode} 
                             howToContact={project.howToContact}
                             contactDetails={project.contactDetails}
+                            projectStatus={project.status}
                             projectName={project.projectName}
                             deadline={project.deadline}
                         />
