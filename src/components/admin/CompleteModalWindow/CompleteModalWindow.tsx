@@ -6,7 +6,7 @@ import UiPopUp from '../UiPopUp/UiPopUp';
 type CompleteModalWindowProps = {
     isOpen: boolean
     setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
-    completeFunction: () => void
+    completeFunction: () => Promise<void>
 }
 
 const CompleteModalWindow = ({ isOpen, setIsOpen, completeFunction }: CompleteModalWindowProps) => {
