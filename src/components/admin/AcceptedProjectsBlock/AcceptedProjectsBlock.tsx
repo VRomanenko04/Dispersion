@@ -20,6 +20,7 @@ type AcceptedProjectObject = {
 
 const AcceptedProjectsBlock = () => {
     const [AcceptedProjects, setAcceptedProjects] = useState<AcceptedProjectObject[]>([]);
+    const [filteredProjects, setFilteredProjects] = useState<AcceptedProjectObject[]>([]);
 
     const inizializeProjects = async () => {
         const projectsList = await GetProjectsData('accepted');
@@ -27,7 +28,19 @@ const AcceptedProjectsBlock = () => {
         if (projectsList) {
             // Преобразование объекта в массив объектов
             const projectsArray = Object.values(projectsList) as AcceptedProjectObject[];
-            setAcceptedProjects(projectsArray);
+
+            const sortedArray = projectsArray.sort((a, b) => {
+                if (a.status === 'Completed' && b.status !== 'Completed') {
+                    return 1;
+                } else if (a.status !== 'Completed' && b.status === 'Completed') {
+                    return -1;
+                } else {
+                    return 0;
+                }
+            });
+
+            setAcceptedProjects(sortedArray);
+            setFilteredProjects(sortedArray);
         }
     }
 
@@ -35,9 +48,25 @@ const AcceptedProjectsBlock = () => {
         inizializeProjects();
     }, []);
 
+    const handleSearchChange = (searchTerm: string) => {
+        if (!searchTerm) {
+            setFilteredProjects(AcceptedProjects);
+            return;
+        }
+
+        const lowercasedSearchTerm = searchTerm.toLowerCase();
+        const filtered = AcceptedProjects.filter((project) =>
+            project.projectName.toLowerCase().includes(lowercasedSearchTerm) ||
+            project.orderCode.toLowerCase().includes(lowercasedSearchTerm) ||
+            project.fullName.toLowerCase().includes(lowercasedSearchTerm)
+        );
+
+        setFilteredProjects(filtered);
+    };
+
     return (
         <section className={styles.container}>
-            <SearchInput />
+            <SearchInput onChangeFunc={handleSearchChange}/>
             <div className={styles.filter__container}>
                 <div className={styles.prev}>
                     <p>Превью</p>
@@ -56,7 +85,7 @@ const AcceptedProjectsBlock = () => {
                 </div>
             </div>
             <div className={styles.projects__container}>
-                {AcceptedProjects.map((project) => (
+                {filteredProjects.map((project) => (
                     <div key={project.orderCode}>
                         <AcceptedProject 
                             fullName={project.fullName} 
