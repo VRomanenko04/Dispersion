@@ -32,6 +32,8 @@ const AcceptedProject = (props: AcceptedProjectProps) => {
             const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 
             setTimeToDeadline(`${days}д. ${hours}ч.`);
+        } else if (props.projectStatus){
+            setTimeToDeadline('0д. 0ч.');
         } else {
             setTimeToDeadline('Срок истек');
         }
@@ -54,7 +56,7 @@ const AcceptedProject = (props: AcceptedProjectProps) => {
                 </div>
                 <h6 className={styles.title}>{props.projectName}</h6>
                 <p className={styles.order__code}>{isProjectOpen && 'Код заказа: '}№ {props.orderCode}</p>
-                <p className={styles.deadline}>{props.projectStatus ? '0д. 0ч.' : timeToDeadline}</p>
+                <p className={`${styles.deadline} ${timeToDeadline === 'Срок истек' ? styles.red__deadline : ''}`}>{timeToDeadline}</p>
                 {props.projectStatus ? (
                     <p className={styles.status__done}>Завершен</p>
                 ) : (

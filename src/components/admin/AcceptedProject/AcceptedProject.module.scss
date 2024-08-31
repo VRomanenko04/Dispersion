@@ -82,6 +82,10 @@
     border-right: 1.5px #d1d1d1 solid;
 }
 
+.red__deadline {
+    color: $magenta;
+}
+
 .status__active, .status__done {
     display: flex;
     align-items: center;
