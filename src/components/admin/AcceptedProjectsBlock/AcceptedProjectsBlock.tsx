@@ -35,10 +35,11 @@ const AcceptedProjectsBlock = () => {
                 } else if (a.status !== 'Completed' && b.status === 'Completed') {
                     return -1;
                 } else {
-                    return 0;
+                    // Если оба проекта не "Completed" или оба "Completed", сортируем по дедлайну
+                    return new Date(a.deadline).getTime() - new Date(b.deadline).getTime();
                 }
             });
-
+            
             setAcceptedProjects(sortedArray);
             setFilteredProjects(sortedArray);
         }
