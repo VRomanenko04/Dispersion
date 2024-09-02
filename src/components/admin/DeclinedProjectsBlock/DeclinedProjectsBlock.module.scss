@@ -1,0 +1,36 @@
+@import '../../../styles/root.scss';
+
+.filter__container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 1148px;
+    padding-left: 1px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    gap: 20px;
+    border: 0.5px solid #f3f3f3;
+}
+
+.prev {
+    width: 101px;
+    border-right: 1.5px #d1d1d1 solid;
+
+    p {
+        padding-left: 10px;
+    }
+}
+
+.name {
+    width: 300px;
+    border-right: 1.5px #d1d1d1 solid;
+}
+
+.order__code {
+    width: 548px;
+    border-right: 1.5px #d1d1d1 solid;
+}
+
+.status {
+    width: 150px;
+}
