@@ -10,7 +10,6 @@ type AcceptedProjectObject = {
     fullName: string
     howToContact: string
     message: string
-    projectType: string
     orderCode: string
     contactDetails?: string
     status?: string
