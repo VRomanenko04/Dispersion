@@ -38,8 +38,8 @@ export async function POST(req: NextRequest) {
 
         await transporter.sendMail(mailOptions);
         return NextResponse.json({ success: true });
-        } catch (error) {
-            console.error(error);
-            return NextResponse.json({ success: false, error: 'Ошибка при отправке письма' });
-        }
+    } catch (error) {
+        console.error(error);
+        return NextResponse.json({ success: false, error: 'Ошибка при отправке письма' });
+    }
 }
