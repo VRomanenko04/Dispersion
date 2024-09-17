@@ -1,12 +1,20 @@
 @import '../../../styles/root.scss';
 
-.container {
+.wrapper {
     height: 20vh;
-    margin-bottom: 150px;
+    margin-bottom: 250px;
+    margin-top: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.container {
+    background-color: #fff;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.15);
+    padding: 20px 40px;
+    border-radius: 10px;
 }
 
 .abilities__up,
@@ -30,21 +38,21 @@
 }
 
 .regular {
-    font-style: $bodyLarge;
+    font-style: 20px;
     font-weight: $regular;
 }
 
 .semibold {
-    font-size: $title;
+    font-size: 24px;
     font-weight: $semiBold;
 }
 
 .hight {
-    font-size: $title;
+    font-size: 24px;
     font-weight: $regular;
 }
 
 .big {
-    font-size: $headline;
+    font-size: 40px;
     font-weight: $bold;
 }
