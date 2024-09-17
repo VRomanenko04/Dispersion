@@ -1,0 +1,38 @@
+@import '../../../styles/root.scss';
+
+.container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: auto;
+    max-height: 90vh;
+    padding: 150px 0;
+    background: rgb(42,67,146);
+    background: linear-gradient(360deg, rgba(42,67,146,1) 0%, rgba(63,220,255,1) 100%);
+}
+
+.background {
+    width: 100%;
+    max-height: 750px;
+}
+
+.text__container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+
+    h1 {
+        text-align: center;
+        font-size: $title;
+        font-weight: $medium;
+        color: $white;
+        max-width: 90%;
+    }
+}
