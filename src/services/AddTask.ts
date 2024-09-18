@@ -2,10 +2,6 @@ import { database } from "@/app/firebase"
 import { ref, set } from "firebase/database"
 import { GetProjectsData } from "./GetData";
 
-interface Project {
-    name: string;
-    orderCode: string;
-}
 
 export const AddTask = async (email: string, projectName: string) => {
     try {
