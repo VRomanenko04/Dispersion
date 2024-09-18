@@ -24,6 +24,7 @@ export const AddTask = async (email: string, projectName: string) => {
         const orderCode = foundProject.orderCode;
 
         const TaskInfo = {
+            'projectName': projectName,
             'orderCode': orderCode,
         }
 
