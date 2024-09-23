@@ -11,6 +11,10 @@ import ImageEtalon1 from '@/assets/Image_Etalon_1.png';
 import ImageEtalon2 from '@/assets/Image_Etalon_2.png';
 import ImageEtalon3 from '@/assets/Image_Etalon_3.png';
 import ImageEtalon4 from '@/assets/Image_Etalon_4.png';
+import ImageUCanPower1 from '@/assets/Image_UCanPower_1.png';
+import ImageUCanPower2 from '@/assets/Image_UCanPower_2.png';
+import ImageUCanPower3 from '@/assets/Image_UCanPower_3.png';
+import ImageUCanPower4 from '@/assets/Image_UCanPower_4.png';
 import { motion } from 'framer-motion';
 import ImageModal from '../ImageModal/ImageModal';
 
@@ -30,10 +34,10 @@ const slides = [
         descrition: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione reiciendis eos, aut quis ipsa dicta in nobis aspernatur doloribus architecto voluptas exercitationem facere amet! Neque vel aspernatur repudiandae sint fuga cupiditate, eius officia adipisci recusandae corporis saepe eaque dicta sit, pariatur voluptatem atque debitis. Totam tempore quo perspiciatis commodi quae.'
     },
     {
-        image1: ImageSpaceDev1,
-        image2: ImageSpaceDev2,
-        image3: ImageSpaceDev3,
-        image4: ImageSpaceDev4,
+        image1: ImageUCanPower1,
+        image2: ImageUCanPower2,
+        image3: ImageUCanPower3,
+        image4: ImageUCanPower4,
         descrition: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis commodi sed nobis tempora error, sunt quibusdam libero, aliquid corporis, dolorum laborum nisi ipsa atque veritatis asperiores assumenda pariatur porro consequuntur inventore omnis praesentium voluptate sit consequatur. Quod placeat asperiores inventore?'
     }
 ]
