@@ -11,16 +11,23 @@
 }
 
 .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
     background-color: #fff;
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.15);
     padding: 20px 40px;
     border-radius: 10px;
+    min-height: 120px;
+    height: auto;
 }
 
 .abilities__up,
 .abilities__down {
     width: 90vw;
-    max-width: 1420px;
+    max-width: 1280px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -32,27 +39,22 @@
     }
 }
 
-.abilities__up {
-    margin-right: 5px;
-    margin-bottom: -5px;
-}
-
 .regular {
-    font-style: 20px;
+    font-size: $bodySmall;
     font-weight: $regular;
 }
 
 .semibold {
-    font-size: 24px;
+    font-size: $bodyMedium;
     font-weight: $semiBold;
 }
 
 .hight {
-    font-size: 24px;
+    font-size: $bodyMedium;
     font-weight: $regular;
 }
 
 .big {
-    font-size: 40px;
+    font-size: calc($title + 4px);
     font-weight: $bold;
 }
