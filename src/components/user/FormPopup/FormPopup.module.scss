@@ -1,0 +1,26 @@
+@import '../../../styles/root.scss';
+
+.container {
+    width: 500px;
+    height: 64px;
+    border-radius: 5px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.text {
+    color: $purple;
+    font-size: $bodyLarge;
+    font-weight: $medium;
+}
+
+.error {
+    color: $magenta;
+    font-size: $bodyLarge;
+    font-weight: $medium;
+}
