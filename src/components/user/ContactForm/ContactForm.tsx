@@ -71,7 +71,7 @@ const ContactForm = () => {
                 setIsPopupOpen(true)
                 setTimeout(() => {
                     setIsPopupOpen(false);
-                }, 1200);
+                }, 1500);
             } catch (err) {
                 console.error('Ошибка при сохранении данных в базе данных:', err);
 
@@ -79,7 +79,7 @@ const ContactForm = () => {
                 setIsPopupOpen(true)
                 setTimeout(() => {
                     setIsPopupOpen(false);
-                }, 1200);
+                }, 1500);
             }
 
             reset(); // Сброс формы после успешной отправки и сохранения
@@ -89,18 +89,10 @@ const ContactForm = () => {
             setIsPopupOpen(true)
             setTimeout(() => {
                 setIsPopupOpen(false);
-            }, 1200);
+            }, 1500);
         }
         setIsSubmitting(false);
     }
-
-    //Удалить потом !!!!
-    // const handleTestingPopup = () => {
-    //     setIsPopupOpen(true)
-    //             setTimeout(() => {
-    //                 setIsPopupOpen(false);
-    //             }, 1200);
-    // }
 
     return (
         <>
