@@ -8,7 +8,7 @@ import UiPopUp from '../UiPopUp/UiPopUp';
 import DeleteModalWindow from '../DeleteModalWindow/DeleteModalWindow';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from '@/app/firebase';
-import { AddTask } from '@/services/AddTask';
+import { AddTaskList } from '@/services/AddTaskList';
 
 type Props = {
     onChangeFunc?: (value: string) => void
@@ -26,7 +26,7 @@ const SearchBar = ({ onChangeFunc }: Props) => {
     const handleCreateTask = (projectName: string) => {
         onAuthStateChanged(auth, async (user) => {
             if(user?.email) {
-                await AddTask(user?.email, projectName).then(() => {
+                await AddTaskList(user?.email, projectName).then(() => {
                     setIsCreateOpen(false);
                 }).finally(() => {
                     setTimeout(() => {

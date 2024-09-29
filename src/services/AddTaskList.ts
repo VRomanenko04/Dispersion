@@ -3,7 +3,7 @@ import { ref, set } from "firebase/database"
 import { GetProjectsData } from "./GetData";
 
 
-export const AddTask = async (email: string, projectName: string) => {
+export const AddTaskList = async (email: string, projectName: string) => {
     try {
         const sanitizedEmail = email.split('.')[0];
 
