@@ -12,16 +12,15 @@ import { AddTaskList } from '@/services/AddTaskList';
 
 type Props = {
     onChangeFunc?: (value: string) => void
+    onDeleteProjects: () => Promise<void>
+    isOpen: boolean
+    setIsOpen:  React.Dispatch<React.SetStateAction<boolean>>
+    initialize: () => void
 }
 
-const SearchBar = ({ onChangeFunc }: Props) => {
+const SearchBar = ({ onChangeFunc, onDeleteProjects, isOpen, setIsOpen, initialize }: Props) => {
     const [isCreateOpen, setIsCreateOpen] = useState(false);
-    const [isDeleteOpen, setIsDeleteOpen] = useState(false);
     const [inputValue, setInputValue] = useState('');
-
-    const handleDeleteTasks = () => {
-        console.log('Delete');
-    }
 
     const handleCreateTask = (projectName: string) => {
         onAuthStateChanged(auth, async (user) => {
@@ -30,7 +29,7 @@ const SearchBar = ({ onChangeFunc }: Props) => {
                     setIsCreateOpen(false);
                 }).finally(() => {
                     setTimeout(() => {
-                        window.location.reload();
+                        initialize();
                     }, 500)
                 });
             }
@@ -47,7 +46,7 @@ const SearchBar = ({ onChangeFunc }: Props) => {
                 <SearchInput onChangeFunc={onChangeFunc}/>
                 <div className={styles.buttons}>
                     <button className={styles.plus} onClick={() => setIsCreateOpen(true)}>+</button>
-                    <button className={styles.trash__btn} onClick={() => setIsDeleteOpen(true)}><Image className={styles.trash__icon} src={TrashIcon} alt='trash can icon'/></button>
+                    <button className={styles.trash__btn} onClick={() => setIsOpen(true)}><Image className={styles.trash__icon} src={TrashIcon} alt='trash can icon'/></button>
                 </div>
             </section>
             <UiPopUp isOpen={isCreateOpen} setIsOpen={setIsCreateOpen}>
@@ -60,7 +59,7 @@ const SearchBar = ({ onChangeFunc }: Props) => {
                     <button className={styles.modal__btn} onClick={() => handleCreateTask(inputValue)}>Добавить</button>
                 </div>
             </UiPopUp>
-            <DeleteModalWindow isOpen={isDeleteOpen} setIsOpen={setIsDeleteOpen} deleteFunction={handleDeleteTasks}/>
+            <DeleteModalWindow isOpen={isOpen} setIsOpen={setIsOpen} deleteFunction={onDeleteProjects}/>
         </>
     )
 }
