@@ -1,0 +1,15 @@
+@import '../../../styles//root.scss';
+
+.task {
+    display: flex;
+    align-items: center;
+    min-height: 66px;
+    height: auto;
+    background-color: #fff;
+    padding-left: 20px;
+    border-radius: 5px;
+    margin-bottom: 2px;
+    font-size: $bodySmall;
+    color: #646464;
+    cursor: pointer;
+}
