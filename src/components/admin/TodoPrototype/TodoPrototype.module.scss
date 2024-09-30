@@ -36,6 +36,9 @@
     background-color: #f3f3f3;
     height: 260px;
     border-radius: 5px;
+    padding: 2px;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .last__line {
@@ -49,12 +52,6 @@
     color: $blue;
     font-size: $bodySmall;
     font-weight: $medium;
-    cursor: pointer;
-}
-
-.trash_icon {
-    height: 22px;
-    width: auto;
     cursor: pointer;
 }
 
