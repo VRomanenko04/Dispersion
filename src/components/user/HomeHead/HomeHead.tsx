@@ -12,7 +12,7 @@ const HomeHead = () => {
         <header className={`${styles.container} ${beVietnamPro.className}`}>
             <Image className={styles.background} src={Background_image} alt='backgrond dispersion logo'/>
             <div className={styles.text__container}>
-                <Image src={Logo} alt='dispersion logo'/>
+                <Image src={Logo} alt='dispersion logo' className={styles.logo}/>
                 <h1>web design & web development studio</h1>
             </div>
         </header>

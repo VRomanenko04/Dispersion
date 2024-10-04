@@ -36,3 +36,30 @@
         max-width: 90%;
     }
 }
+
+
+@media screen and (max-width: 500px) {
+    .container {
+        padding: 50px 0;
+        max-height: 500px;
+    }
+
+    .background {
+        width: 150%;
+        max-height: 500px;
+    }
+
+    .logo {
+        width: 210px;
+        height: auto;
+    }
+
+    .text__container {
+        width: 70%;
+        gap: 30px;
+
+        h1 {
+            font-size: $mobileFont;
+        }
+    }
+}
