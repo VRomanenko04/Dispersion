@@ -1,0 +1,46 @@
+@import '../../../styles/root.scss';
+
+.wrapper {
+    padding-left: 20px;
+    position: relative;
+}
+
+.container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding-bottom: 10px;
+    scrollbar-width: thin;
+    scrollbar-color: $blue #fff;
+
+    &::-webkit-scrollbar {
+        height: 8px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $blue;
+        border-radius: 10px;
+        height: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: #fff;
+        border-radius: 10px;
+    }
+}
+
+.slide {
+    border-radius: 10px;
+    height: 240px;
+    width: 160px;
+}
+
+@media screen and (min-width: 450px) {
+    .slide {
+        border-radius: 10px;
+        height: 300px;
+        width: 200px;
+    }
+}
