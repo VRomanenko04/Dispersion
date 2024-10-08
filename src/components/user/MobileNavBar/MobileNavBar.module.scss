@@ -1,0 +1,60 @@
+@import '../../../styles/root.scss';
+
+.container {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &:-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.blue {
+    background-color: $blue;
+}
+
+.magenta {
+    background-color: $magenta;
+}
+
+.purple {
+    background-color: $purple;
+}
+
+.menu {
+    position: relative;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+    padding: 0 30px;
+    white-space: nowrap;
+}
+
+.link {
+    color: $white;
+    cursor: pointer;
+    font-size: $mobileFont;
+    transition: font-weight 0.1s ease-in-out;
+    position: relative;
+    white-space: nowrap;
+}
+
+.active__link {
+    font-weight: $semiBold;
+}
+
+.underline {
+    position: absolute;
+    bottom: -3px;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 2px;
+}
