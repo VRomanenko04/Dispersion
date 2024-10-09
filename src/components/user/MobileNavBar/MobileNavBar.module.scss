@@ -5,13 +5,13 @@
     margin-bottom: 80px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     overflow-x: auto;
     white-space: nowrap;
     scrollbar-width: none;
     -ms-overflow-style: none;
 
-    &:-webkit-scrollbar {
+    &::-webkit-scrollbar {
         display: none;
     }
 }
@@ -58,4 +58,10 @@
     height: 2px;
     background-color: #fff;
     border-radius: 2px;
+}
+
+@media screen and (min-width: 450px) and (max-width: 800px) {
+    .container {
+        justify-content: center;
+    }
 }
