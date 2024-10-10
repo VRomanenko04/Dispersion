@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styles from './UiDropDownList.module.scss';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Control, Controller } from 'react-hook-form';
@@ -13,7 +13,22 @@ type DropDownListProps = {
 }
 
 const UiDropDownList = ({ valuesList, controller, fieldName, defaultValue }: DropDownListProps) => {
-const [isChangeble, setIsChangeble] = useState(false);
+    const [isChangeble, setIsChangeble] = useState(false);
+
+    const dropdownRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+                setIsChangeble(false);
+            }
+        };
+    
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
 
     return (
         <Controller 
@@ -21,7 +36,7 @@ const [isChangeble, setIsChangeble] = useState(false);
             name={fieldName}
             defaultValue={defaultValue}
             render={({ field }) => (
-                <div className={`${styles.dropdown__container} ${isChangeble ? styles.dropdown__open : ''}`}>
+                <div ref={dropdownRef} className={`${styles.dropdown__container} ${isChangeble ? styles.dropdown__open : ''}`}>
                     <div className={`${styles.dropdown__btn} ${isChangeble ? styles.dropdown__btn__open : ''}`} onClick={() => setIsChangeble((prev) => !prev)}>
                         {field.value}
                         <p className={styles.arrow}>&gt;</p>
