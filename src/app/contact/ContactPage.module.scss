@@ -42,3 +42,31 @@
         }
     }
 }
+
+
+@media screen and (max-width: 500px) {
+    .header__container {
+        max-width: 350px;
+        display: flex;
+        justify-content: center;
+    
+        .logo {
+            width: auto;
+            height: 40px;
+        }
+    }
+
+    .main__container {
+        width: 90vw;
+        max-width: 350px;
+    
+        .link {
+            font-size: $mobileFont;
+            margin-top: 25px;
+    
+            .icon {
+                width: 21px;
+            }
+        }
+    }
+}

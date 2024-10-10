@@ -83,6 +83,7 @@
         resize: none;
         height: 230px;
         width: 100%;
+        max-width: 1390px;
         margin-top: 7px;
         padding: 10px 15px;
         font-size: $bodyLarge;
@@ -142,4 +143,160 @@
 .error__checkbox {
     color: $magenta;
     font-size: 14px;
+}
+
+
+@media screen and (max-width: 500px) {
+    .form__container {
+        max-width: 350px;
+        font-size: $mobileFont;
+    }
+
+    .form__top {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        margin-bottom: 30px;
+        margin-top: 30px;
+
+        .input__container {
+            .label__content {
+                align-items: center;
+            }
+
+            input {
+                max-width: 330px;
+                padding: 0 10px;
+                margin-top: 10px;
+                font-size: $mobileFont;
+            }
+        }
+    }
+
+    .textarea__container {
+        .label__content {
+            gap: 20px;
+        }
+
+        textarea {
+            height: 200px;
+            width: 94%;
+            padding: 10px 10px;
+            font-size: $mobileFont;
+        }
+    }
+
+    .error {
+        margin-top: 0;
+    }
+
+    .checkbox__container {    
+        div {
+            align-items: center;
+        }
+    }
+
+    .button {
+        max-width: 350px;
+        width: 100%;
+        height: 40px;
+        font-size: $mobileFont;
+        margin-top: 10px;
+        margin-bottom: 40px;
+    }
+}
+
+
+@media screen and (min-width: 500px) and (max-width: 800px) {
+    .form__container {
+        max-width: 500px;
+        font-size: $mobileFont;
+    }
+
+    .form__top {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        margin-bottom: 30px;
+        margin-top: 30px;
+
+        .input__container {
+            .label__content {
+                align-items: center;
+            }
+
+            input {
+                max-width: 430px;
+                padding: 0 10px;
+                margin-top: 10px;
+                font-size: $mobileFont;
+            }
+        }
+    }
+
+    .textarea__container {
+        .label__content {
+            gap: 20px;
+        }
+
+        textarea {
+            height: 200px;
+            max-width: 430px;
+            width: 100%;
+            padding: 10px 10px;
+            font-size: $mobileFont;
+        }
+    }
+
+    .error {
+        margin-top: 0;
+    }
+
+    .checkbox__container {    
+        div {
+            align-items: center;
+        }
+    }
+
+    .button {
+        max-width: 450px;
+        width: 100%;
+        height: 40px;
+        font-size: $mobileFont;
+        margin-top: 10px;
+        margin-bottom: 40px;
+    }
+}
+
+
+@media screen and (min-width: 801px) and (max-width: 1200px) {
+    .form__container {
+        max-width: 800px;
+        font-size: $bodyMedium;
+    }
+
+    .form__top {
+        grid-row-gap: 30px;
+        margin-bottom: 60px;
+    
+        .input__container {
+            input {
+                max-width: 240px;
+                padding: 0 10px;
+                font-size: $bodyMedium;
+            }
+        }
+    }
+
+    .textarea__container {
+        textarea {
+            resize: none;
+            height: 230px;
+            width: 100%;
+            max-width: 780px;
+            margin-top: 7px;
+            padding: 10px 10px;
+            font-size: $bodyMedium;
+        }
+    }
 }
