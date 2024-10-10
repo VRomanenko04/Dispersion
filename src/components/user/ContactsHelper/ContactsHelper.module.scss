@@ -43,3 +43,18 @@
         font-weight: $regular;
     }
 }
+
+@media screen and (max-width: 800px) {
+    .image {
+        width: 14px;
+    }
+    
+    .comment__block {
+        height: 30px;
+        width: 160px;
+    
+        p {
+            font-size: $mobileFont;
+        }
+    }
+}
