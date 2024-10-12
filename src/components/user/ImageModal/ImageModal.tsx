@@ -14,7 +14,7 @@ type ImageModalProps = {
 
 const ImageModal = ({ image, imageDescription, onClose, isOpen }: ImageModalProps) => {
     return (
-        <AnimatePresence>
+        <AnimatePresence initial={false}>
             {isOpen && (
                 <motion.div
                     className={`${styles.modal__wrapper} ${isOpen ? styles.active__wrapper : ''}`}
@@ -23,17 +23,17 @@ const ImageModal = ({ image, imageDescription, onClose, isOpen }: ImageModalProp
                     exit={{ opacity: 0 }}
                     onClick={onClose}
                 >
-                    <motion.div
-                        className={`${styles.modal__container} ${isOpen ? styles.active__container : ''}`}
-                        initial={{ scale: 0.9 }}
-                        animate={{ scale: 1 }}
-                        exit={{ scale: 0.9 }}
-                        transition={{ duration: 0.2 }}
-                        onClick={e => e.stopPropagation()}
-                    >
-                        <button className={styles.close__modal} onClick={onClose}>+</button>
-                        <Image className={styles.image} src={image} alt={imageDescription} />
-                    </motion.div>
+                        <motion.div
+                            className={`${styles.modal__container} ${isOpen ? styles.active__container : ''}`}
+                            initial={{ scale: 0.9 }}
+                            animate={{ scale: 1 }}
+                            exit={{ scale: 0.9 }}
+                            transition={{ duration: 0.2 }}
+                            onClick={e => e.stopPropagation()}
+                        >
+                            <button className={styles.close__modal} onClick={onClose}>+</button>
+                            <Image className={styles.image} src={image} alt={imageDescription} placeholder='blur'/>
+                        </motion.div>
                 </motion.div>
             )}
         </AnimatePresence>
