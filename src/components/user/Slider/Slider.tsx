@@ -91,19 +91,23 @@ const Slider = () => {
                         style={{ display: index === activeSlideIndex ? 'flex' : 'none' }}
                     >
                         <Image src={slide.image1} alt={slide.descrition} 
+                            placeholder="blur"
                             className={styles.image__main} 
                             onClick={() => handleImageClick(slide.image1, slide.descrition)}
                         />
                         <div className={styles.slide__subimages}>
                             <Image src={slide.image2} alt={slide.descrition} 
+                                placeholder="blur"
                                 className={styles.image__sub} 
                                 onClick={() => handleImageClick(slide.image2, slide.descrition)}
                             />
                             <Image src={slide.image3} alt={slide.descrition} 
+                                placeholder="blur"
                                 className={styles.image__sub} 
                                 onClick={() => handleImageClick(slide.image3, slide.descrition)}
                             />
                             <Image src={slide.image4} alt={slide.descrition} 
+                                placeholder="blur"
                                 className={styles.image__sub} 
                                 onClick={() => handleImageClick(slide.image4, slide.descrition)}
                             />

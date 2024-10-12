@@ -10,7 +10,7 @@ const beVietnamPro = Be_Vietnam_Pro({subsets: ["latin"], weight: ["400", "500", 
 const HomeHead = () => {    
     return (
         <header className={`${styles.container} ${beVietnamPro.className}`}>
-            <Image className={styles.background} src={Background_image} alt='backgrond dispersion logo'/>
+            <Image className={styles.background} src={Background_image} alt='backgrond dispersion logo' priority loading='eager'/>
             <div className={styles.text__container}>
                 <Image src={Logo} alt='dispersion logo' className={styles.logo}/>
                 <h1>web design & web development studio</h1>
