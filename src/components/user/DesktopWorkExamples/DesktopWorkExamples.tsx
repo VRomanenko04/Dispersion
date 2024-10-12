@@ -3,7 +3,7 @@ import React, { useRef } from 'react';
 import styles from './workExamples.module.scss';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
-const WorkExamples = () => {
+const DesktopWorkExamples = () => {
     const ref = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
         target: ref,
@@ -56,4 +56,4 @@ const WorkExamples = () => {
     )
 }
 
-export default WorkExamples;
+export default DesktopWorkExamples;
