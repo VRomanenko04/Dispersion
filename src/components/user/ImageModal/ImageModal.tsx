@@ -32,7 +32,7 @@ const ImageModal = ({ image, imageDescription, onClose, isOpen }: ImageModalProp
                         onClick={e => e.stopPropagation()}
                     >
                         <button className={styles.close__modal} onClick={onClose}>+</button>
-                        <Image className={styles.image} src={image} alt={imageDescription} placeholder="blur"/>
+                        <Image className={styles.image} src={image} alt={imageDescription} />
                     </motion.div>
                 </motion.div>
             )}
