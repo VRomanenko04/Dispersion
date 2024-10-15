@@ -98,3 +98,30 @@
     font-size: $bodyMedium;
     font-weight: $regular;
 }
+
+
+@media screen and (min-width: 801px) and (max-width: 1200px) {
+    .regular {
+        font-size: $mobileFont;
+        font-weight: $regular;
+    }
+    
+    .semibold {
+        font-size: $mobileFont;
+        font-weight: $semiBold;
+    }
+    
+    .hight {
+        font-size: $mobileFont;
+        font-weight: $regular;
+    }
+    
+    .big {
+        font-size: $bodyMedium;
+        font-weight: $bold;
+    }
+
+    .container {
+        gap: 25px;
+    }
+}
