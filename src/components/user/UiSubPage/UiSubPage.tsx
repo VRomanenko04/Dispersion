@@ -3,6 +3,8 @@ import React from 'react';
 import styles from './UiSubPage.module.scss';
 import Link from 'next/link';
 import { useMediaQuery } from 'react-responsive';
+import { StaticImageData } from 'next/image';
+import UiSubPageMobile from '../UiSubPageMobile/UiSubPageMobile';
 
 type UISubProps = {
     isStandart: boolean
@@ -10,9 +12,10 @@ type UISubProps = {
     text: string | React.ReactNode
     link: string
     color: 'magenta' | 'blue'
+    slides: StaticImageData[]
 }
 
-const UiSubPage = ({ isStandart, title, text, link, color }: UISubProps) => {
+const UiSubPage = ({ isStandart, title, text, link, color, slides }: UISubProps) => {
     const isMobile = useMediaQuery({query: '(max-width: 800px)'});
 
     return (
@@ -54,16 +57,13 @@ const UiSubPage = ({ isStandart, title, text, link, color }: UISubProps) => {
                     </div>
                 )
             ) : (
-                <div className={`${styles.mobile__container} ${color === "blue" ? styles.blue : color === "magenta" ? styles.magenta : ''}`}>
-                    <article className={styles.article__mobile}>
-                        <h3>{title}</h3>
-                        <p>{text}</p>
-                    </article>
-                    <div className={styles.sceleton__mobile}></div>
-                    <Link className={`${styles.link__mobile} ${color === 'blue' ? styles.link__blue : color === 'magenta' ? styles.link__magenta : ''}`} href={link}>
-                        Continue&gt;
-                    </Link>
-                </div>
+                <UiSubPageMobile 
+                    slides={slides}
+                    text={text}
+                    title={title}
+                    link={link}
+                    color={color}
+                />
             )}
         </>
     )
