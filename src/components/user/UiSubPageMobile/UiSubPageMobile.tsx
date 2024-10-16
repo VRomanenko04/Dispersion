@@ -4,6 +4,8 @@ import React, { useEffect, useState } from 'react';
 import styles from './UiSubPageMobile.module.scss';
 import Image, { StaticImageData } from 'next/image';
 import { motion, useMotionValue } from 'framer-motion';
+import SliderDots from '../SliderDots/SliderDots';
+import { useMediaQuery } from 'react-responsive';
 
 type UiSubPageMobileProps = {
     title: string
@@ -28,6 +30,7 @@ const SPRING_OPTIONS = {
 const UiSubPageMobile = ({ title, text, color, link, slides }: UiSubPageMobileProps) => {
     const [imgIndex, setImgIndex] = useState(0);
 
+    const isSmallScreen = useMediaQuery({ query: 'max-width: 400px'})
     const dragX = useMotionValue(0);
 
     useEffect(() => {
@@ -74,7 +77,7 @@ const UiSubPageMobile = ({ title, text, color, link, slides }: UiSubPageMobilePr
                     }}
                     style={{ x: dragX }}
                     animate={{
-                        translateX: `-${imgIndex * 375}px`,
+                        translateX: isSmallScreen ? `-${imgIndex * 375}px` : `-${imgIndex * 440}px`,
                     }}
                     transition={SPRING_OPTIONS}
                     onDragEnd={onDragEnd}
@@ -85,6 +88,7 @@ const UiSubPageMobile = ({ title, text, color, link, slides }: UiSubPageMobilePr
                     ))}
                 </motion.div>
             </section>
+            <SliderDots imgIndex={imgIndex}/>
             <Link className={`${styles.link__mobile} ${color === 'blue' ? styles.link__blue : color === 'magenta' ? styles.link__magenta : ''}`} href={link}>
                 Continue&gt;
             </Link>
