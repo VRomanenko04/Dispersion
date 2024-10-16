@@ -30,7 +30,7 @@ const SPRING_OPTIONS = {
 const UiSubPageMobile = ({ title, text, color, link, slides }: UiSubPageMobileProps) => {
     const [imgIndex, setImgIndex] = useState(0);
 
-    const isSmallScreen = useMediaQuery({ query: 'max-width: 450px'});
+    const isSmallScreen = useMediaQuery({ query: '(max-width: 450px)'});
     const dragX = useMotionValue(0);
 
     useEffect(() => {
@@ -77,7 +77,7 @@ const UiSubPageMobile = ({ title, text, color, link, slides }: UiSubPageMobilePr
                     }}
                     style={{ x: dragX }}
                     animate={{
-                        translateX: isSmallScreen ? `-${imgIndex * 375}px` : `-${imgIndex * 440}px`,
+                        translateX: isSmallScreen ? `-${imgIndex * 378}px` : `-${imgIndex * 440}px`,
                     }}
                     transition={SPRING_OPTIONS}
                     onDragEnd={onDragEnd}
