@@ -1,0 +1,13 @@
+.container {
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+
+.dot {
+    border-radius: 50%;
+    height: 8px;
+    width: 8px;
+}
