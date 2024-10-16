@@ -38,7 +38,7 @@ const OurSpecialty = () => {
 
         controls = animate(xTranslationFirst, [0, finalPosition], {
             ease: 'linear',
-            duration: 25,
+            duration: 37.5,
             repeat: Infinity,
             repeatType: 'loop',
             repeatDelay: 0
@@ -54,7 +54,7 @@ const OurSpecialty = () => {
 
         controls = animate(xTranslationSecond, [startPosition, finalPosition], {
             ease: 'linear',
-            duration: 20,
+            duration: 30,
             repeat: Infinity,
             repeatType: 'loop',
             repeatDelay: 0
