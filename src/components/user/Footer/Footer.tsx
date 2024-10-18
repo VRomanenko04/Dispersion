@@ -14,8 +14,8 @@ const Footer = ({ color }: FooterProps) => {
             <div className={styles.footer__container}>
                 <address className={styles.adress}>
                     <h6>Support:</h6>
-                    <p>Inst: <a className={styles.link} href="https://www.instagram.com">@dispertion_</a></p>
-                    <p>E-mail: <a className={styles.link} href="mailto: dispertion@gmail.com">dispertion@gmail.com</a></p>
+                    <p>Inst: <a className={styles.link} href="https://www.instagram.com/dispersion_studio?igsh=dnNtMXIybWlxa3V1&utm_source=qr">@dispertion_studio</a></p>
+                    <p>E-mail: <a className={styles.link} href="mailto: dispersionwebagency@gmail.com">dispersionwebagency@gmail.com</a></p>
                 </address>
                 <Link href='/'>
                     <Image src={Logo} alt='Dispersion logo' className={styles.logo}/>
