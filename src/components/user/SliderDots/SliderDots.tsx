@@ -6,13 +6,13 @@ type SliderDotsProps = {
     imgIndex: number
 }
 
-const dots = ['', '', ''];
+const dots = ['dot1', 'dot2', 'dot3'];
 
 const SliderDots = ({ imgIndex }: SliderDotsProps) => {
     return (
         <section className={styles.container}>
             <AnimatePresence>
-                {dots.map((_, index) => (
+                {dots.map((_dot, index) => (
                     <motion.div
                         key={index}
                         className={styles.dot}
