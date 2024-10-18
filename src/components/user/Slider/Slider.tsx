@@ -4,45 +4,15 @@ import styles from './Slider.module.scss';
 import Image, { StaticImageData } from 'next/image';
 
 import ImageSpaceDev1 from '@/assets/SD1.webp';
-import ImageSpaceDev2 from '@/assets/SD2.webp';
-import ImageSpaceDev3 from '@/assets/SD3.webp';
-import ImageSpaceDev4 from '@/assets/SD4.webp';
-import ImageEtalon1 from '@/assets/ETAL1.webp';
-import ImageEtalon2 from '@/assets/ETAL2.webp';
-import ImageEtalon3 from '@/assets/ETAL3.webp';
-import ImageEtalon4 from '@/assets/ETATL4.webp';
-import ImageUCanPower1 from '@/assets/UCP1.webp';
-import ImageUCanPower2 from '@/assets/UCP2.webp';
-import ImageUCanPower3 from '@/assets/UCP3.webp';
-import ImageUCanPower4 from '@/assets/UCP4.webp';
 import { motion } from 'framer-motion';
 import ImageModal from '../ImageModal/ImageModal';
+import { SlidesObj } from '../PortfolioSubPage/PortfolioSubPage';
 
-const slides = [
-    {
-        image1: ImageSpaceDev1,
-        image2: ImageSpaceDev2,
-        image3: ImageSpaceDev3,
-        image4: ImageSpaceDev4,
-        descrition: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis commodi sed nobis tempora error, sunt quibusdam libero, aliquid corporis, dolorum laborum nisi ipsa atque veritatis asperiores assumenda pariatur porro consequuntur inventore omnis praesentium voluptate sit consequatur. Quod placeat asperiores inventore?'
-    },
-    {
-        image1: ImageEtalon1,
-        image2: ImageEtalon2,
-        image3: ImageEtalon3,
-        image4: ImageEtalon4,
-        descrition: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione reiciendis eos, aut quis ipsa dicta in nobis aspernatur doloribus architecto voluptas exercitationem facere amet! Neque vel aspernatur repudiandae sint fuga cupiditate, eius officia adipisci recusandae corporis saepe eaque dicta sit, pariatur voluptatem atque debitis. Totam tempore quo perspiciatis commodi quae.'
-    },
-    {
-        image1: ImageUCanPower1,
-        image2: ImageUCanPower2,
-        image3: ImageUCanPower3,
-        image4: ImageUCanPower4,
-        descrition: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis commodi sed nobis tempora error, sunt quibusdam libero, aliquid corporis, dolorum laborum nisi ipsa atque veritatis asperiores assumenda pariatur porro consequuntur inventore omnis praesentium voluptate sit consequatur. Quod placeat asperiores inventore?'
-    }
-]
+type SliderProps = {
+    slides: SlidesObj[];
+};
 
-const Slider = () => {
+const Slider = ({ slides }: SliderProps) => {
     const [activeSlideIndex, setActiveSlideIndex] = useState(0);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedImage, setSelectedImage] = useState<StaticImageData>(ImageSpaceDev1);
@@ -90,26 +60,26 @@ const Slider = () => {
                         transition={{ duration: 0}}
                         style={{ display: index === activeSlideIndex ? 'flex' : 'none' }}
                     >
-                        <Image src={slide.image1} alt={slide.descrition} 
+                        <Image src={slide.image1} alt={slide.description} 
                             placeholder="blur"
                             className={styles.image__main} 
-                            onClick={() => handleImageClick(slide.image1, slide.descrition)}
+                            onClick={() => handleImageClick(slide.image1, slide.description)}
                         />
                         <div className={styles.slide__subimages}>
-                            <Image src={slide.image2} alt={slide.descrition} 
+                            <Image src={slide.image2} alt={slide.description} 
                                 placeholder="blur"
                                 className={styles.image__sub} 
-                                onClick={() => handleImageClick(slide.image2, slide.descrition)}
+                                onClick={() => handleImageClick(slide.image2, slide.description)}
                             />
-                            <Image src={slide.image3} alt={slide.descrition} 
+                            <Image src={slide.image3} alt={slide.description} 
                                 placeholder="blur"
                                 className={styles.image__sub} 
-                                onClick={() => handleImageClick(slide.image3, slide.descrition)}
+                                onClick={() => handleImageClick(slide.image3, slide.description)}
                             />
-                            <Image src={slide.image4} alt={slide.descrition} 
+                            <Image src={slide.image4} alt={slide.description} 
                                 placeholder="blur"
                                 className={styles.image__sub} 
-                                onClick={() => handleImageClick(slide.image4, slide.descrition)}
+                                onClick={() => handleImageClick(slide.image4, slide.description)}
                             />
                         </div>
                     </motion.div>
@@ -136,7 +106,7 @@ const Slider = () => {
                         animate={{ opacity: index === activeSlideIndex ? 1 : 0}}
                         transition={{ duration: 0}}
                     >
-                        {slide.descrition}
+                        {slide.description}
                     </motion.p>
                 ))}
             </div>
