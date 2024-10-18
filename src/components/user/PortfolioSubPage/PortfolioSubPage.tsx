@@ -39,21 +39,21 @@ const slides = [
         image2: ImageSpaceDev2,
         image3: ImageSpaceDev3,
         image4: ImageSpaceDev4,
-        description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis commodi sed nobis tempora error, sunt quibusdam libero, aliquid corporis, dolorum laborum nisi ipsa atque veritatis asperiores assumenda pariatur porro consequuntur inventore omnis praesentium voluptate sit consequatur. Quod placeat asperiores inventore?'
+        description: 'SPACEDEV, an educational web application designed to teach programming and IT management. Built on NEXT.js and Node.js, with Firebase as the BaaS solution, the platform offers a seamless learning experience. This project is an example of a personal approach.  It uses a large number of non-standard solutions, complex animations and 3D objects. And also a very wide functionality in the form of authorization, online payment, admin panel and close contact between backend and frontend applications. Its interactive features and modern design engage users, making complex concepts accessible. This project not only empowers individuals to enhance their tech skills but also positions SPACEDEV as a valuable resource in the education sector.'
     },
     {
         image1: ImageEtalon1,
         image2: ImageEtalon2,
         image3: ImageEtalon3,
         image4: ImageEtalon4,
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione reiciendis eos, aut quis ipsa dicta in nobis aspernatur doloribus architecto voluptas exercitationem facere amet! Neque vel aspernatur repudiandae sint fuga cupiditate, eius officia adipisci recusandae corporis saepe eaque dicta sit, pariatur voluptatem atque debitis. Totam tempore quo perspiciatis commodi quae.'
+        description: 'A high-converting sales website for the ETALON residential complex, featuring an intuitive interface that allows users to select layouts easily. Built on NEXT.js and Node.js, the site combines fast performance with a modern design, enhancing user experience. This project not only showcases the residential offerings effectively but also drives significant business results, helping ETALON achieve its sales goals and strengthen its market presence.'
     },
     {
         image1: ImageUCanPower1,
         image2: ImageUCanPower2,
         image3: ImageUCanPower3,
         image4: ImageUCanPower4,
-        description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis commodi sed nobis tempora error, sunt quibusdam libero, aliquid corporis, dolorum laborum nisi ipsa atque veritatis asperiores assumenda pariatur porro consequuntur inventore omnis praesentium voluptate sit consequatur. Quod placeat asperiores inventore?'
+        description: "UCan Power, a budget-friendly e-commerce platform for a company specializing in high-capacity batteries and inverters. Utilizing NEXT.js and Node.js, the project was completed within a tight deadline and limited budget, directly addressing the company’s business needs. The site combines a user-friendly interface with efficient functionality, enabling seamless product browsing and choosing products. UCan Power effectively supports the company's growth and market competitiveness while maximizing value for both the client and their customers."
     }
 ]
 

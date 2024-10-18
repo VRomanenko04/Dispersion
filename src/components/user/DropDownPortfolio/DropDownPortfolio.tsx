@@ -71,6 +71,11 @@ const DropDownPortfolio = ({ slides }: DropDownPortfolioProps) => {
                         <Image className={styles.image} src={slides[currentProject].image2} alt={slides[currentProject].description} placeholder='blur'/>
                         <Image className={styles.image} src={slides[currentProject].image3} alt={slides[currentProject].description} placeholder='blur'/>
                         <Image className={styles.image} src={slides[currentProject].image4} alt={slides[currentProject].description} placeholder='blur'/>
+                        <article className={styles.description__container}>
+                            <motion.p>
+                                {slides[currentProject].description}
+                            </motion.p>
+                        </article>
                     </>
                 )}
             </div>
