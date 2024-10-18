@@ -110,8 +110,8 @@ const OurSpecialty = () => {
                                 ref={refFirst}
                                 style={{ x: xTranslationFirst }}
                             >
-                                {[...firstList, ...firstList].map((item) => (
-                                    <span className={styles.item} key={item}>{item}</span>
+                                {[...firstList, ...firstList].map((item, index) => (
+                                    <span className={styles.item} key={`${item}-${index}`}>{item}</span>
                                 ))}
                             </motion.h2>
                             <motion.h2 
@@ -119,8 +119,8 @@ const OurSpecialty = () => {
                                 ref={refSecond}
                                 style={{ x: xTranslationSecond }}
                             >
-                                {[...secondList, ...secondList].map((item) => (
-                                    <span className={styles.item} key={item}>{item}</span>
+                                {[...secondList, ...secondList].map((item, index) => (
+                                    <span className={styles.item} key={`${item}-${index}`}>{item}</span>
                                 ))}
                             </motion.h2>
                         </AnimatePresence>
