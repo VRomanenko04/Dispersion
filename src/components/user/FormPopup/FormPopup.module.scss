@@ -4,6 +4,7 @@
     width: 500px;
     height: 64px;
     border-radius: 5px;
+    z-index: 4;
     background-color: #fff;
     display: flex;
     align-items: center;
@@ -11,6 +12,7 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.15);
 }
 
 .text {
@@ -23,4 +25,24 @@
     color: $magenta;
     font-size: $bodyLarge;
     font-weight: $medium;
+}
+
+
+@media screen and (max-width: 800px) {
+    .container {
+        width: 330px;
+        height: 54px;
+        position: fixed;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .text {
+        font-size: $bodySmall;
+    }
+
+    .error {
+        font-size: $bodySmall;
+    }
 }
