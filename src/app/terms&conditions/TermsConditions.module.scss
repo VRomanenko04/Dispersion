@@ -1,0 +1,118 @@
+@import '../../styles/root.scss';
+
+.header__wrapper {
+    width: 100%;
+    height: 60px;
+    background-color: $purple;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header__container {
+    width: 90vw;
+    max-width: 1420px;
+
+    .logo {
+        width: auto;
+        height: 45px;
+    }
+}
+
+.main__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 40px 0 60px;
+
+    .link {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: $bodyMedium;
+        margin-bottom: 30px;
+
+        .icon {
+            width: 30px;
+            height: auto;
+        }
+    }
+
+    .text__container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        max-width: 1420px;
+        width: 90vw;
+
+        article {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+
+            h6 {
+                color: $purple;
+                font-size: $bodyLarge;
+                font-weight: $semiBold;
+            }
+
+            p {
+                font-size: $bodySmall;
+                font-weight: $regular;
+
+                a {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 500px) {
+    .header__container {
+        max-width: 350px;
+        display: flex;
+        justify-content: center;
+    
+        .logo {
+            width: auto;
+            height: 40px;
+        }
+    }
+
+    .main__container {
+        margin: 25px 0 60px;
+    
+        .text__container {
+            max-width: 350px;
+            width: 100vw;
+
+            .link {
+                font-size: $mobileFont;
+                margin-bottom: 20px;
+        
+                .icon {
+                    width: 21px;
+                }
+            }
+    
+            article {
+                h6 {
+                    font-size: $bodyMedium;
+                    font-weight: $semiBold;
+                }
+    
+                p {
+                    font-size: $mobileFont;
+                    font-weight: $regular;
+    
+                    a {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}
