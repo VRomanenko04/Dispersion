@@ -58,6 +58,7 @@
     border-radius: 5px;
     font-weight: $regular;
     font-size: $bodyLarge;
+    z-index: 3;
 }
 
 .btn__left {
@@ -99,4 +100,60 @@
     border: 3px solid #C1C1C1;
     border-radius: 10px;
     cursor: pointer;
+}
+
+@media screen and (min-width: 801px) and (max-width: 1400px) {
+    .wrapper {
+        height: 450px;
+        max-width: 1100px;
+    }
+
+    .slide {
+        gap: 10px;
+    }
+
+    .slide__subimages {
+        gap: 10px;
+    }
+
+    .image__main {
+        width: 530px;
+        height: 305px;
+        border-radius: 10px;
+    }
+    
+    .image__sub {
+        height: 95px;
+        width: 170px;
+        border-radius: 8px;
+    }
+
+    .btn__left,
+    .btn__right {
+        width: 48px;
+        height: 95px;
+    }
+
+    .slide__bar {
+        top: 90%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 710px;
+    }
+
+    .btn__left {
+        left: 0;
+        transform: translate(-50%, -50%);
+        top: 50%;
+    }
+    
+    .btn__right {
+        left: 100%;
+        transform: translate(-50%, -50%);
+        top: 50%;
+    }
+
+    .description__container {
+        margin-top: -100px;
+    }
 }
