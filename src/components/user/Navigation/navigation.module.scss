@@ -50,7 +50,7 @@
     color: $blue;
 
     .line {
-        background-color: $blue;
+        background-color: $blue !important;
     }
 }
 
@@ -58,7 +58,7 @@
     color: $magenta;
 
     .line {
-        background-color: $magenta;
+        background-color: $magenta !important;
     }
 }
 
@@ -66,7 +66,7 @@
     color: $purple;
 
     .line {
-        background-color: $purple;
+        background-color: $purple !important;
     }
 }
 
@@ -118,4 +118,37 @@
 
 .purple_blur {
     background-color: #9570FF;
+}
+
+
+@media screen and (min-width: 801px) and (max-width: 1400px) {
+    .container {
+        height: 1000px;
+        max-width: 1100px;
+    }
+
+    .menu__item {
+        font-size: $title;
+
+        h3 {
+            font-weight: $semiBold;
+        }
+
+        .line {
+            width: 3px;
+            height: 15px;
+        }
+    }
+
+    .image {
+        width: 520px;
+        height: 520px;
+    }
+
+    .blur {
+        width: 600px;
+        height: 240px;
+        bottom: -40px;
+        left: -100px;
+    }
 }

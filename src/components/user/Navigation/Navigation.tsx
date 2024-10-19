@@ -6,6 +6,7 @@ import Image from 'next/image';
 import Web_3d from '@/assets/web_3d.png';
 import Design_3d from '@/assets/picture_3d.png';
 import Portfolio_3d from '@/assets/bag_3d.png';
+import { useMediaQuery } from 'react-responsive';
 
 type NavProps = {
     currentPage: string
@@ -18,6 +19,8 @@ type NavProps = {
 
 const Navigation = ({ currentPage, setCurrentPage, items, setItems, navImage, setNavImage }: NavProps) => {
 const [isHidden, setIsHidden] = useState(false);
+
+const isMiddleWidth = useMediaQuery({ query: '(min-width: 801px) and (max-width: 1400px)'});
 
 const chosenImage = navImage === "Website creation" ? Web_3d : navImage === "Design services" ? Design_3d : navImage === "Portfolio" ? Portfolio_3d : '';
 const chosenBlur = `${styles.blur} ${navImage === "Website creation" ? styles.blue__blur : navImage === "Design services" ? styles.pink__blur : navImage === "Portfolio" ? styles.purple_blur : ''}`;
@@ -66,8 +69,8 @@ const getActiveClass = (item: string) => {
                                     >
                                         <motion.div 
                                             className={styles.line}
-                                            initial={{ width: "4px", height: "19px"}}
-                                            animate={{ width: isActive ? "8px" : "4px", height: isActive ? "38px" : "19px" }}
+                                            initial={ !isMiddleWidth ? { width: "4px", height: "19px"} : { width: "3px", height: "15px"}}
+                                            animate={ !isMiddleWidth ? { width: isActive ? "8px" : "4px", height: isActive ? "38px" : "19px" } : { width: isActive ? "6px" : "3px", height: isActive ? "30px" : "15px" }}
                                             transition={{ duration: 0.01 }}
                                         ></motion.div>
                                         <motion.h3
