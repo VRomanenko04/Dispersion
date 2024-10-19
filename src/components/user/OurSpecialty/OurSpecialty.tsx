@@ -104,7 +104,6 @@ const OurSpecialty = () => {
             ): (
                 <section className={styles.mobile__wrapper}>
                     <div className={styles.mobile__container}>
-                        <AnimatePresence>
                             <motion.h2 
                                 className={styles.line__up}
                                 ref={refFirst}
@@ -123,7 +122,6 @@ const OurSpecialty = () => {
                                     <span className={styles.item} key={`${item}-${index}`}>{item}</span>
                                 ))}
                             </motion.h2>
-                        </AnimatePresence>
                     </div>
                 </section>
             )}
