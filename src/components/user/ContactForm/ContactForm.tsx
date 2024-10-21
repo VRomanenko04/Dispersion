@@ -153,7 +153,7 @@ const ContactForm = () => {
                     <section className={styles.checkbox__container} style={!isTermsAgreeError ? { marginBottom: 18}: undefined}>
                         <div>
                             <UiCheckbox controller={control}/>
-                            <label htmlFor="">I agree with <Link href='/terms&conditions' className={styles.link}>terms & conditions</Link></label>
+                            <label htmlFor="">I agree with <Link href='/termsandconditions' className={styles.link}>terms & conditions</Link></label>
                         </div>
                         <div>
                             {isTermsAgreeError && <span className={styles.error__checkbox}>{isTermsAgreeError}</span>}
