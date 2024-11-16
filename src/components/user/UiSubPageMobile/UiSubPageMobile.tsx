@@ -80,7 +80,7 @@ const UiSubPageMobile = ({ title, text, color, link, slides }: UiSubPageMobilePr
                     className={styles.slider__container}
                 >
                     {slides.map((imgSrc, index) => (
-                        <Image key={index} src={imgSrc} alt={`${imgIndex}`} className={styles.image}/>
+                        <Image key={index} src={imgSrc} alt={`${imgIndex}`} className={styles.image} placeholder='blur'/>
                     ))}
                 </motion.div>
             </section>
