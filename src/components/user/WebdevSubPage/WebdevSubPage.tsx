@@ -2,16 +2,24 @@ import React from 'react';
 import styles from './WebdevSubPage.module.scss';
 import UiSubPage from '../UiSubPage/UiSubPage';
 import { motion } from 'framer-motion';
-import BasicSlide1 from '@/assets/basic_website1.png';
-import BasicSlide2 from '@/assets/basic_website2.png';
-import BasicSlide3 from '@/assets/basic_website3.png';
+import BasicSlide1 from '@/assets/Basic1.webp';
+import BasicSlide2 from '@/assets/Basic2.webp';
+import BasicSlide3 from '@/assets/Basic3.webp';
+import Individual1 from '@/assets/Individual1.webp';
+import Individual2 from '@/assets/Individual2.webp';
+import Individual3 from '@/assets/Individual3.webp';
+import Personalized1 from '@/assets/Personalized1.webp';
+import Personalized2 from '@/assets/Personalized2.webp';
+import Personalized3 from '@/assets/Personalized3.webp';
 
 type WebDevProps = {
     isActive: boolean
 }
 
 const Slides = {
-    basic: [BasicSlide2, BasicSlide1, BasicSlide3],
+    basic: [BasicSlide1, BasicSlide2, BasicSlide3],
+    individual: [Individual1, Individual2, Individual3],
+    peronalized: [Personalized1, Personalized2, Personalized3]
 }
 
 const WebdevSubPage = ({ isActive }: WebDevProps) => {
@@ -36,7 +44,7 @@ const WebdevSubPage = ({ isActive }: WebDevProps) => {
                 text= {<>Get a website which cover your needs <br /> + more customization options</>}
                 link='/contact'
                 color='blue'
-                slides={Slides.basic}
+                slides={Slides.individual}
             />
             <UiSubPage 
                 isStandart={true}
@@ -44,7 +52,7 @@ const WebdevSubPage = ({ isActive }: WebDevProps) => {
                 text='Absolutely unique website which would make you pop up around your competitors, more functious, more'
                 link='/contact'
                 color='blue'
-                slides={Slides.basic}
+                slides={Slides.peronalized}
             />
         </motion.section>
     )

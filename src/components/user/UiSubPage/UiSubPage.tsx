@@ -3,7 +3,7 @@ import React from 'react';
 import styles from './UiSubPage.module.scss';
 import Link from 'next/link';
 import { useMediaQuery } from 'react-responsive';
-import { StaticImageData } from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import UiSubPageMobile from '../UiSubPageMobile/UiSubPageMobile';
 
 type UISubProps = {
@@ -24,15 +24,15 @@ const UiSubPage = ({ isStandart, title, text, link, color, slides }: UISubProps)
                 isStandart ? (
                     <div className={`${styles.container} ${color === 'blue' ? styles.blue : color === 'magenta' ? styles.magenta : ''}`}>
                         <div className={styles.top__standart}>
-                            <div className={styles.sceleton__big}></div>
+                            <Image src={slides[0]} alt='' className={styles.sceleton__big} placeholder='blur'/>
                             <article className={styles.article}>
                                 <h3>{title}</h3>
                                 <p>{text}</p>
                             </article>
                         </div>
                         <div className={styles.bottom__standart}>
-                            <div className={styles.sceleton__small}></div>
-                            <div className={styles.sceleton__small}></div>
+                            <Image src={slides[1]} alt='' className={styles.sceleton__small} placeholder='blur'/>
+                            <Image src={slides[2]} alt='' className={styles.sceleton__small} placeholder='blur'/>
                             <Link className={`${styles.link} ${color === 'blue' ? styles.link__blue : color === 'magenta' ? styles.link__magenta : ''}`} href={link}>
                                 Continue&gt;
                             </Link>
@@ -45,14 +45,14 @@ const UiSubPage = ({ isStandart, title, text, link, color, slides }: UISubProps)
                                 <h3>{title}</h3>
                                 <p>{text}</p>
                             </article>
-                            <div className={styles.sceleton__big}></div>
+                            <Image src={slides[0]} alt='' className={styles.sceleton__big} placeholder='blur'/>
                         </div>
                         <div className={styles.bottom__unstandart}>
                             <Link className={`${styles.link} ${color === 'blue' ? styles.link__blue : color === 'magenta' ? styles.link__magenta : ''}`} href={link}>
                                 Continue&gt;
                             </Link>
-                            <div className={styles.sceleton__small}></div>
-                            <div className={styles.sceleton__small}></div>
+                            <Image src={slides[1]} alt='' className={styles.sceleton__small} placeholder='blur'/>
+                            <Image src={slides[2]} alt='' className={styles.sceleton__small} placeholder='blur'/>
                         </div>
                     </div>
                 )

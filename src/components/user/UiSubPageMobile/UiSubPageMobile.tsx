@@ -16,7 +16,7 @@ type UiSubPageMobileProps = {
 }
 
 const ONE_SECOND = 1000;
-const AUTO_DELAY = ONE_SECOND * 10;
+const AUTO_DELAY = ONE_SECOND * 4;
 const DRAG_BUFFER = 30;
 
 const SPRING_OPTIONS = {
@@ -64,10 +64,6 @@ const UiSubPageMobile = ({ title, text, color, link, slides }: UiSubPageMobilePr
     
     return (
         <div className={`${styles.mobile__container} ${color === "blue" ? styles.blue : color === "magenta" ? styles.magenta : ''}`}>
-            <article className={styles.article__mobile}>
-                <h3>{title}</h3>
-                <p>{text}</p>
-            </article>
             <section className={styles.slider__mobile}>
                 <motion.div
                     drag="x"
@@ -89,6 +85,10 @@ const UiSubPageMobile = ({ title, text, color, link, slides }: UiSubPageMobilePr
                 </motion.div>
             </section>
             <SliderDots imgIndex={imgIndex}/>
+            <article className={styles.article__mobile}>
+                <h3>{title}</h3>
+                <p>{text}</p>
+            </article>
             <Link className={`${styles.link__mobile} ${color === 'blue' ? styles.link__blue : color === 'magenta' ? styles.link__magenta : ''}`} href={link}>
                 Continue&gt;
             </Link>

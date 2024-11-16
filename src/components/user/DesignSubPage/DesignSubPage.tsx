@@ -2,16 +2,24 @@ import React from 'react';
 import styles from './DesignSubPage.module.scss';
 import UiSubPage from '../UiSubPage/UiSubPage';
 import { motion } from 'framer-motion';
-import BasicSlide1 from '@/assets/basic_website1.png';
-import BasicSlide2 from '@/assets/basic_website2.png';
-import BasicSlide3 from '@/assets/basic_website3.png';
+import Guidelines1 from '@/assets/Guidelines1.webp';
+import Guidelines2 from '@/assets/Guidelines2.webp';
+import Guidelines3 from '@/assets/Guidelines3.webp';
+import Socials1 from '@/assets/Socials1.webp';
+import Socials2 from '@/assets/Socials2.webp';
+import Socials3 from '@/assets/Socials3.webp';
+import Personalized1 from '@/assets/DesignPersonal1.webp';
+import Personalized2 from '@/assets/DesignPersonal2.webp';
+import Personalized3 from '@/assets/DesignPersonal3.webp';
 
 type DesignProps = {
     isActive: boolean
 }
 
 const Slides = {
-    basic: [BasicSlide2, BasicSlide1, BasicSlide3],
+    guidelines: [Guidelines1, Guidelines2, Guidelines3],
+    socials: [Socials1, Socials2, Socials3],
+    personalized: [Personalized1, Personalized2, Personalized3]
 }
 
 const DesignSubPage = ({ isActive }: DesignProps) => {
@@ -28,7 +36,7 @@ const DesignSubPage = ({ isActive }: DesignProps) => {
                 text='Get  universal instruction of your visuals so every time you decided to hire a designer he can follow them'
                 link='/contact'
                 color='magenta'
-                slides={Slides.basic}
+                slides={Slides.guidelines}
             />
             <UiSubPage 
                 isStandart={false}
@@ -36,7 +44,7 @@ const DesignSubPage = ({ isActive }: DesignProps) => {
                 text='Get unique design  of various complexity for your business or personal projects to stand out among competitors!  '
                 link='/contact'
                 color='magenta'
-                slides={Slides.basic}
+                slides={Slides.socials}
             />
             <UiSubPage 
                 isStandart={true}
@@ -44,7 +52,7 @@ const DesignSubPage = ({ isActive }: DesignProps) => {
                 text='Custom project - perfect for someone who want have more or less.'
                 link='/contact'
                 color='magenta'
-                slides={Slides.basic}
+                slides={Slides.personalized}
             />
         </motion.section>
     )
