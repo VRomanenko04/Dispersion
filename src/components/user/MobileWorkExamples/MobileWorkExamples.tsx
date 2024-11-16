@@ -1,50 +1,59 @@
 'use client';
 import React from 'react';
 import styles from './MobileWorkExamples.module.scss';
-import Xisk from '@/assets/xisk_example.png';
 import Image from 'next/image';
+import ImageSpaceDev from '@/assets/topImage1.webp';
+import ImageForum from '@/assets/topImage2.webp';
+import ImageVFoolring from '@/assets/topImage3.webp';
+import ImageXisk from '@/assets/topImage4.webp';
+import ImageUCanPower from '@/assets/topImage5.webp';
+import ImageUCanPower2 from '@/assets/topImage6.webp';
+import ImageAnimation from '@/assets/topImage7.webp';
+import ImageCrux from '@/assets/topImage8.webp';
+import ImageFonts from '@/assets/topImage9.webp';
+import ImageEtalon from '@/assets/topImage10.webp';
 
 
 const slides = [
     {
-        source: Xisk,
-        alt: 'Xisk'
+        source: ImageForum,
+        alt: 'Forum image'
     },
     {
-        source: Xisk,
-        alt: 'Xisk'
+        source: ImageCrux,
+        alt: 'Crux image'
     },
     {
-        source: Xisk,
-        alt: 'Xisk'
+        source: ImageXisk,
+        alt: 'Xisk image'
     },
     {
-        source: Xisk,
-        alt: 'Xisk'
+        source: ImageFonts,
+        alt: 'Fonts image'
     },
     {
-        source: Xisk,
-        alt: 'Xisk'
+        source: ImageUCanPower,
+        alt: 'UCanPower image'
     },
     {
-        source: Xisk,
-        alt: 'Xisk'
+        source: ImageEtalon,
+        alt: 'Etalon image'
     },
     {
-        source: Xisk,
-        alt: 'Xisk'
+        source: ImageUCanPower2,
+        alt: 'UCanPower2 image'
     },
     {
-        source: Xisk,
-        alt: 'Xisk'
+        source: ImageSpaceDev,
+        alt: 'SpaceDev image'
     },
     {
-        source: Xisk,
-        alt: 'Xisk'
+        source: ImageAnimation,
+        alt: 'Animation image'
     },
     {
-        source: Xisk,
-        alt: 'Xisk'
+        source: ImageVFoolring,
+        alt: 'VFoolring image'
     },
 ];
 
@@ -54,7 +63,7 @@ const MobileWorkExamples = () => {
         <section className={styles.wrapper}>
             <div className={styles.container}>
                 {slides.map((image, index) => (
-                    <Image key={index} src={image.source} alt={image.alt} className={styles.slide}/>
+                    <Image key={index} src={image.source} alt={image.alt} className={styles.slide} placeholder='blur'/>
                 ))}
             </div>
             <div className={styles.scrollTrack}>
