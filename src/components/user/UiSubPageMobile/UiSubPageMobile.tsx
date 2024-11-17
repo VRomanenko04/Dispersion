@@ -16,14 +16,14 @@ type UiSubPageMobileProps = {
 }
 
 const ONE_SECOND = 1000;
-const AUTO_DELAY = ONE_SECOND * 4;
-const DRAG_BUFFER = 30;
+const AUTO_DELAY = ONE_SECOND * 6;
+const DRAG_BUFFER = 20;
 
 const SPRING_OPTIONS = {
     type: "spring",
-    mass: 3,
-    stiffness: 400,
-    damping: 50,
+    mass: 5,
+    stiffness: 350,
+    damping: 60,
 };
 
 
