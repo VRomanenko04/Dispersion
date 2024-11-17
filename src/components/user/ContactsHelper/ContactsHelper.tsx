@@ -50,14 +50,14 @@ const ContactsHelper = () => {
             )}
             <motion.div 
                 ref={commentRef}
-                className={styles.comment__container}
+                className={`${styles.comment__container} ${isHovered ? styles.show : ''}`}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: isHovered ? 1 : 0 }}
-                transition={ !isMobile ? { duration: 0.2, delay: 0.3 } : { duration: 0.2 }}
+                transition={ !isMobile ? { duration: 0.2, delay: 0.1 } : { duration: 0.2 }}
             >
                 <div className={styles.triangle}></div>
                 <div className={styles.comment__block}>
-                    <p>Like @something</p>
+                    <p>Please write your phone number to contact by WhatsApp or @username to contact by Messenger</p>
                 </div>
             </motion.div>
         </div>

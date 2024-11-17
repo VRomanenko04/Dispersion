@@ -13,6 +13,11 @@
 .comment__container {
     position: absolute;
     opacity: 1;
+    display: none;
+}
+
+.show {
+    display: block;
 }
 
 .triangle {
@@ -32,8 +37,8 @@
     top: 4px;
     left: -15px;
     border-radius: 5px;
-    height: 40px;
-    width: 210px;
+    height: auto;
+    width: 240px;
     padding: 10px;
     background-color: $dark;
 
@@ -50,8 +55,8 @@
     }
     
     .comment__block {
-        height: 30px;
-        width: 160px;
+        height: auto;
+        width: 180px;
     
         p {
             font-size: $mobileFont;
