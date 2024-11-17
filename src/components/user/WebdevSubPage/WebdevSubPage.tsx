@@ -33,7 +33,7 @@ const WebdevSubPage = ({ isActive }: WebDevProps) => {
             <UiSubPage 
                 isStandart={true}
                 title='Basic website'
-                text='Choose one of our templates, and receive your website in the shortest terms.'
+                text='Quick creation of simple websites for a specific task. For example, a restaurant landing page or a business card website for your company, etc.'
                 link='/contact'
                 color="blue"
                 slides={Slides.basic}
@@ -41,7 +41,7 @@ const WebdevSubPage = ({ isActive }: WebDevProps) => {
             <UiSubPage 
                 isStandart={false}
                 title='Individual website'
-                text= {<>Get a website which cover your needs <br /> + more customization options</>}
+                text='The most popular option.  A website with an individual design for you and thoughtful business logic. For example, online stores, booking sites, etc.'
                 link='/contact'
                 color='blue'
                 slides={Slides.individual}
@@ -49,7 +49,7 @@ const WebdevSubPage = ({ isActive }: WebDevProps) => {
             <UiSubPage 
                 isStandart={true}
                 title='Personalized project'
-                text='Absolutely unique website which would make you pop up around your competitors, more functious, more'
+                text='A completely unique web application tailored to your specific needs of any complexity. For example, an educational platform application or a website with a custom SRM system, etc.'
                 link='/contact'
                 color='blue'
                 slides={Slides.peronalized}
