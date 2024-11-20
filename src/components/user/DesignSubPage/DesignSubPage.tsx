@@ -33,7 +33,7 @@ const DesignSubPage = ({ isActive }: DesignProps) => {
             <UiSubPage 
                 isStandart={true}
                 title='Design guidelines'
-                text='Get  universal instruction of your visuals so every time you decided to hire a designer he can follow them'
+                text={<>Get your universal instruction of your visuals so every time you hire a designer he can follow them <br /> <br />Ideal for start ups, or someone who want refresh their appearance.</>}
                 link='/contact'
                 color='magenta'
                 slides={Slides.guidelines}
@@ -41,7 +41,7 @@ const DesignSubPage = ({ isActive }: DesignProps) => {
             <UiSubPage 
                 isStandart={false}
                 title='Socials design'
-                text='Get unique design  of various complexity for your business or personal projects to stand out among competitors!  '
+                text={<>Get vibrant designs that suits your business or personal socials to stand out among competitors! <br /> <br /> Perfect for advertisements, headers, posts, and more.</>}
                 link='/contact'
                 color='magenta'
                 slides={Slides.socials}
@@ -49,7 +49,7 @@ const DesignSubPage = ({ isActive }: DesignProps) => {
             <UiSubPage 
                 isStandart={true}
                 title='Personalized project'
-                text='Custom project - perfect for someone who want have more or less.'
+                text={<>Perfect for specific design projects. <br /><br /> Ideal for packaging, posters, flyers, 2D/3D visualizations, and more.</>}
                 link='/contact'
                 color='magenta'
                 slides={Slides.personalized}
