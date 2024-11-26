@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "@/styles/globals.scss";
 import '@/app/firebase';
+import Analytics from "@/components/user/Analytics";
 
 export const metadata: Metadata = {
   title: "Dispersion digital agency",
@@ -14,6 +15,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <Analytics />
+      </head>
       <body>{children}</body>
     </html>
   );
